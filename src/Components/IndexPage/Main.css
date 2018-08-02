@@ -1,0 +1,24 @@
+.header-nav-links {
+	color: #00D2D3;
+	font-weight: bold;
+	margin: 0 15px;
+}
+
+.header-nav-links:hover {
+	color: #00D2D3;
+	text-decoration: none;
+	outline: none;
+} 
+
+.active {
+	height: 100%;
+	border-bottom: 2px solid #00D2D3;
+}
+
+/* =========== media screens ============== */
+
+@media screen and (max-width: 1281px) {
+	.header-nav-links {;
+	margin: 0 13px;
+}
+}
