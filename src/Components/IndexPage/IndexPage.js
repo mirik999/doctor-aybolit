@@ -6,10 +6,10 @@ import DoctorInfo from './DoctorInfo';
 import Sertificats from './Sertificats';
 import GalleryKoshk from './GalleryKoshk';
 //css
-import './Main.css';
+import './IndexPage.css';
 
 
-class Content extends PureComponent {
+class IndexPage extends PureComponent {
 	render() {
 		return (
 			<Wrapper>
@@ -22,4 +22,4 @@ class Content extends PureComponent {
 	}
 }
 
-export default Content;
+export default IndexPage;

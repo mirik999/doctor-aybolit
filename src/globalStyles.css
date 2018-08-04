@@ -25,6 +25,10 @@
 	font-size: 18px;
 }
 
+.font-28-fix {
+	font-size: 2.2vw;
+}
+
 .font-28 {
 	font-size: 1.2vw;
 }
@@ -72,14 +76,17 @@
 	.font-16 {
 		font-size: 10px;
 	}
+    .font-28-fix {
+        font-size: 2.6vw;
+    }
     .font-28 {
-        font-size: 1.6vw;
+        font-size: 3vw;
     }
     .font-32 {
         font-size: 20px;
     }
     .font-39 {
-        font-size: 2.3vw;
+        font-size: 3.3vw;
     }
     .font-64 {
         font-size: 4.4vw;

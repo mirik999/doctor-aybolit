@@ -116,6 +116,8 @@ class GalleryKoshk extends Component {
                   Lorem İpsum – dizayn nəşrlərində istifadə olunan düzgün olmayan mətndir. Dəqiq quruluşa malik
                   olmayan bu mətn latincada hələ XVI əsrdə öz qəlib formasını almışdır.
                 </span>
+                <span className="koshk-quote-left"><Fa icon="quote-left" /></span>
+                <span className="koshk-quote-right"><Fa icon="quote-right" /></span>
               </div>
               <div className="d-flex align-items-center justify-content-end w-100">
                 <div className="koshk-info d-flex flex-column align-items-end">

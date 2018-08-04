@@ -28,14 +28,8 @@
 
 .header-logo {
 	position: absolute;
-	bottom: 30px;
+	bottom: 40px;
     min-width: 220px;
-}
-
-@media screen and (max-width: 991px) {
-    .header-logo {
-        bottom: 15px;
-    }
 }
 
 .active-link {
@@ -205,6 +199,22 @@
     max-height: 112px;
 }
 
+.koshk-quote-right {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    font-size: 50px;
+    opacity: 0.7;
+}
+
+.koshk-quote-left {
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    font-size: 50px;
+    opacity: 0.7;
+}
+
 /* content row 5 */
 
 .owl-carousel {
@@ -297,6 +307,15 @@
 @media screen and (max-width: 1281px) {
 	.header-nav-links {;
 	    margin: 0 13px;
+    }
+    .header-logo {
+        bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header-logo {
+        bottom: 15px;
     }
 }
 

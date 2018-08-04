@@ -5,8 +5,8 @@ import { IntlProvider } from 'react-intl';
 //user components
 import Header from './Components/MainComponents/Header';
 import Footer from './Components/MainComponents/Footer';
-import BurgerMenu from './Components/MainComponents/BurgerMenu';
-import Content from './Components/IndexPage/Content';
+import IndexPage from './Components/IndexPage/IndexPage';
+import BiographyPage from './Components/BiographyPage/BiographyPage';
 //locale data
 import messages from './messages';
 
@@ -20,7 +20,8 @@ class App extends PureComponent {
 	      <div className="container-fluid">
 	      	<Header />
 		      <Switch>
-			      <Route exact location={location} path="/" component={Content} />
+			      <Route exact location={location} path="/" component={IndexPage} />
+			      <Route exact location={location} path="/biography" component={BiographyPage} />
 		      </Switch>
 					<Footer />
 	      </div>

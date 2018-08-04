@@ -14,7 +14,7 @@ class Header extends Component {
             <div className="d-flex flex-column justify-content-center align-items-center px-0">
               <img src={require('../../lib/svg/Logo/Logo (white).svg')} alt="white-logo" className="img-fluid mb-4" />
               <NavLink exact to="/" className="burger-nav-links" activeClassName="active-link-burger">ƏSAS SƏHİFƏ</NavLink>
-              <NavLink exact to="/test1" className="burger-nav-links" activeClassName="active-link-burger">BİOQRAFİYA</NavLink>
+              <NavLink exact to="/biography" className="burger-nav-links" activeClassName="active-link-burger">BİOQRAFİYA</NavLink>
               <NavLink exact to="/test2" className="burger-nav-links" activeClassName="active-link-burger">MEDİA</NavLink>
               <NavLink exact to="/test3" className="burger-nav-links" activeClassName="active-link-burger">QALEREYA</NavLink>
               <NavLink exact to="/test4" className="burger-nav-links" activeClassName="active-link-burger">MƏQALƏLƏR</NavLink>
