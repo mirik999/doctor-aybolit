@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 //user components
 import Header from './Components/MainComponents/Header';
-import Main from './Components/IndexPage/Main';
+import Footer from './Components/MainComponents/Footer';
+import BurgerMenu from './Components/MainComponents/BurgerMenu';
+import Content from './Components/IndexPage/Content';
 //locale data
 import messages from './messages';
 
@@ -18,8 +20,9 @@ class App extends PureComponent {
 	      <div className="container-fluid">
 	      	<Header />
 		      <Switch>
-			      <Route exact location={location} path="/" component={Main} />
+			      <Route exact location={location} path="/" component={Content} />
 		      </Switch>
+					<Footer />
 	      </div>
 	    </IntlProvider>
     );

@@ -23,8 +23,8 @@ import 'mdbreact/dist/mdbreact';
 import './globalStyles.css';
 
 //setting localization
-addLocaleData(en)
-addLocaleData(ru)
+addLocaleData(en);
+addLocaleData(ru);
 //create store
 export const store = createStore (
 	rootReducer,

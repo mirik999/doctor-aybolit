@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { Fa } from 'mdbreact';
+import { slide as Menu } from 'react-burger-menu'
 //user components
 import Wrapper from './Wrapper.js';
+import BurgerMenu from './BurgerMenu.js';
 
 
 class Header extends Component {
@@ -10,13 +12,14 @@ class Header extends Component {
 		return (
 			<Wrapper>
 				<div className="row justify-content-center" style={styles.headerInfoBg}>
-					<div className="col-8 col-md-7 text-left font-16 p-2" style={styles.headerInfo}>
-						<span className="mr-1 mr-sm-2"><Fa icon="phone" /></span>
+          <BurgerMenu />
+					<div className="col-8 col-md-7 text-left font-16 py-2 px-0 px-sm-2" style={styles.headerInfo}>
+						<span className="ml-2 ml-md-0 mr-1 mr-sm-2"><Fa icon="phone" /></span>
 						<span>+994 12 7654321</span>
 						<span className="ml-2 ml-md-5 mr-1 mr-sm-2"><Fa icon="envelope-o" /></span>
 						<span>melumat@fermanhesenov.az</span>
 					</div>
-					<div className="col-4 col-md-3 d-flex justify-content-end p-2">
+					<div className="col-4 col-md-3 d-flex justify-content-end py-2 px-0 px-sm-2">
 						<div className="header-social d-flex align-items-center mr-2 border-right">
 							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="facebook-f" /></a>
 							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="twitter" /></a>
@@ -29,23 +32,22 @@ class Header extends Component {
 					</div>
 				</div>
 			{/* second header part */}
-				<div className="row justify-content-center" style={styles.headerNavBarFix}>
-
-				</div>
-				<div className="row justify-content-center" style={styles.headerNavBar}>
-					<div className="col-4 col-md-3 d-flex align-items-start">
-						<img src={require('../../lib/images/Logo/Logo-header.svg')} alt="logo" className="img-fluid" />
+				<div className="d-none d-lg-block row justify-content-center" style={styles.headerNavBarFix}></div>
+				<div className="row justify-content-start justify-content-lg-center" style={styles.headerNavBar}>
+          <div className="d-none d-md-block d-lg-none col-1"></div>
+					<div className="col-3 col-lg-3 d-flex align-start px-md-0">
+						<img src={require('../../lib/images/Logo/Logo-header.svg')} alt="logo" className="img-fluid header-logo" />
 					</div>
-					<div className="col-8 col-md-7 d-flex justify-content-end align-items-start p-2">
-						<NavLink exact to="/" className="header-nav-links font-18" activeClassName="active">ƏSAS SƏHİFƏ</NavLink>
-						<NavLink exact to="/test1" className="header-nav-links font-18" activeClassName="active">BİOQRAFİYA</NavLink>
-						<NavLink exact to="/test2" className="header-nav-links font-18" activeClassName="active">MEDİA</NavLink>
-						<NavLink exact to="/test3" className="header-nav-links font-18" activeClassName="active">QALEREYA</NavLink>
-						<NavLink exact to="/test4" className="header-nav-links font-18" activeClassName="active">MƏQALƏLƏR</NavLink>
-						<NavLink exact to="/test5" className="header-nav-links font-18" activeClassName="active">ƏLAQƏ</NavLink>
+					<div className="col-lg-7 d-none d-lg-flex justify-content-end align-items-start px-0">
+						<NavLink exact to="/" className="header-nav-links font-18" activeClassName="active-link">ƏSAS SƏHİFƏ</NavLink>
+						<NavLink exact to="/test1" className="header-nav-links font-18" activeClassName="active-link">BİOQRAFİYA</NavLink>
+						<NavLink exact to="/test2" className="header-nav-links font-18" activeClassName="active-link">MEDİA</NavLink>
+						<NavLink exact to="/test3" className="header-nav-links font-18" activeClassName="active-link">QALEREYA</NavLink>
+						<NavLink exact to="/test4" className="header-nav-links font-18" activeClassName="active-link">MƏQALƏLƏR</NavLink>
+						<NavLink exact to="/test5" className="header-nav-links font-18" activeClassName="active-link">ƏLAQƏ</NavLink>
 					</div>
 				</div>
-			</Wrapper>	
+			</Wrapper>
 		);
 	}
 }
@@ -63,6 +65,7 @@ const styles = {
 	headerNavBarFix: {
 		height: '63px'
 	},
-}
+};
+
 
 export default Header;
