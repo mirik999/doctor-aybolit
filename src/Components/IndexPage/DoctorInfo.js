@@ -22,7 +22,7 @@ class DoctorInfo extends PureComponent {
               Ipsum mətnləri yenidən tərcümə olunmuşdur. Həmçinin Çiçeronun “de Finibus Bonorum et Malorum” əsərinin
               1.10.32 və 1.10.33-cü bölmələri 1914-cü ildə H. Rackham tərəfindən ingiliscəyə tərcümə olunmuşdur.
             </p>
-            <div className="d-flex d-md-none justify-content-end">
+            <div className="d-flex justify-content-end">
               <div className="col-4 col-sm-3">
                 <img src={require('../../lib/images/Signature.png')} alt="Signature" className="img-fluid doctors-signature" />
               </div>

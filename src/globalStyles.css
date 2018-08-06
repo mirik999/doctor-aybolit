@@ -2,8 +2,26 @@
     color: #4F4F4F;
 }
 
+.text-color-blue {
+    color: #00D2D3;
+}
+
+.text-color:hover {
+    color: #4F4F4F;
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.word-wrap {
+    display: inline-block;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
+}
+
 .fixed-height {
     height: 100%;
+    width: 100%;
 }
 
 .cursor-pointer {
@@ -16,6 +34,10 @@
 
 
 /*  =========== fonts =============== */
+
+.font-12 {
+	font-size: 12px;
+}
 
 .font-16 {
 	font-size: 16px;
@@ -48,13 +70,19 @@
 
 /* ========== media screens ============ */
 
-@media screen and (max-width: 1302px) {
+@media screen and (max-width: 1402px) {
 	.font-18 {
 		font-size: 14px;
 	}
     .font-16 {
 		font-size: 14px;
 	}
+}
+
+@media screen and (max-width: 1316px) {
+    .font-12 {
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 1101px) {

@@ -1,7 +1,7 @@
 import React, {PureComponent, Fragment} from 'react';
 //user components
 import Wrapper from '../MainComponents/Wrapper';
-import Image from './Image';
+import DoctorIndexImage from './DoctorIndexImage';
 import DoctorInfo from './DoctorInfo';
 import Sertificats from './Sertificats';
 import GalleryKoshk from './GalleryKoshk';
@@ -13,7 +13,7 @@ class IndexPage extends PureComponent {
 	render() {
 		return (
 			<Wrapper>
-        <Image />
+        <DoctorIndexImage />
         <DoctorInfo />
         <Sertificats />
         <GalleryKoshk />

@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 
 
-class Image extends PureComponent {
+class DoctorIndexImage extends PureComponent {
   render() {
     return (
       <div className="row">
@@ -19,4 +19,4 @@ class Image extends PureComponent {
   }
 }
 
-export default Image;
+export default DoctorIndexImage;

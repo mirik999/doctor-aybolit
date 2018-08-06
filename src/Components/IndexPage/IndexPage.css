@@ -88,6 +88,15 @@
     max-height: 224px;
 }
 
+.lightbox-container {
+    display: flex;
+}
+
+.lightbox-img-thumbnail {
+    width: 200px !important;
+    height: 200px !important;
+}
+
 /* content row 4 */
 
 /*.gallery-slider-dots {*/
@@ -273,6 +282,15 @@
     vertical-align: middle;
 }
 
+.art-header {
+    color: #00D2D3;
+    font-size: 18px !important;
+}
+
+.art-mini-desc {
+    max-height: 50px;
+}
+
 .art-card-wrap {
     border-top: 1px solid #e7e7e7;
     border-left: 1px solid #e7e7e7;
@@ -282,6 +300,7 @@
     -moz-border-radius: 10px;
     border-radius: 10px;
     flex: 1;
+    min-height: 100% !important;
 }
 
 .art-img {
@@ -298,11 +317,39 @@
 
 /* content row 6 */
 
+.footer-color {
+    color: #DFE6E9
+}
+
 .footer-heading {
     border-bottom: 2px solid #00D2D3;
 }
 
+.footer-art-img {
+    max-width: 108px;
+    max-height: 74px;
+}
+
+.footer-add-icon {
+    font-size: 2.5vw;
+}
+
+.add-info-wrap {
+    border-bottom: 1px dashed #DFE6E9;
+}
+
 /* =========== media screens ============== */
+
+@media screen and (max-width: 1401px) {
+    .header-logo {
+        width: 300px;
+    }
+
+    .doctors-sert {
+        max-width: 236px;
+        max-height: 184px;
+    }
+}
 
 @media screen and (max-width: 1281px) {
 	.header-nav-links {;
