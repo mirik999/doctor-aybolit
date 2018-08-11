@@ -80,7 +80,7 @@ class Footer extends PureComponent {
                     <span className="footer-add-icon mr-3 mr-xl-4"><Fa icon="map-marker" /></span>
                     <div className="add-nums d-flex">
                       <a href="#" className="footer-color">
-                        <small>kademik Mirəsədulla <br/>Mirqasımov, 1</small></a>
+                        <small>Akademik Mirəsədulla <br/>Mirqasımov, 1</small></a>
                     </div>
                   </div>
                 </div>

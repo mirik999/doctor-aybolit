@@ -9,12 +9,23 @@
     core-js "^2.5.6"
     regenerator-runtime "^0.11.1"
 
+"@tedconf/react-show-more@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@tedconf/react-show-more/-/react-show-more-1.1.2.tgz#7221a1c7e8a5204a09fc9d1db30cc6102bcabadb"
+  dependencies:
+    babel-preset-flow "6.23.0"
+    eslint-plugin-flowtype "2.43.0"
+
 "@types/jss@^9.3.0":
   version "9.5.3"
   resolved "https://registry.yarnpkg.com/@types/jss/-/jss-9.5.3.tgz#0c106de3fe0b324cd4173fac7dab26c12cda624e"
   dependencies:
     csstype "^2.0.0"
     indefinite-observable "^1.0.1"
+
+"@types/node@*":
+  version "10.5.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.7.tgz#960d9feb3ade2233bcc9843c918d740b4f78a7cf"
 
 "@types/react-transition-group@^2.0.8":
   version "2.0.9"
@@ -188,13 +199,6 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-aphrodite@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/aphrodite/-/aphrodite-0.5.0.tgz#a4b9a8902662395d2702e70ac7a2b4ca66f25703"
-  dependencies:
-    asap "^2.0.3"
-    inline-style-prefixer "^2.0.0"
-
 append-transform@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/append-transform/-/append-transform-0.4.0.tgz#d76ebf8ca94d276e247a36bad44a4b74ab611991"
@@ -300,7 +304,7 @@ arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-asap@^2.0.3, asap@~2.0.3:
+asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
@@ -1033,7 +1037,7 @@ babel-preset-env@1.6.1:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-flow@^6.23.0:
+babel-preset-flow@6.23.0, babel-preset-flow@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-preset-flow/-/babel-preset-flow-6.23.0.tgz#e71218887085ae9a24b5be4169affb599816c49d"
   dependencies:
@@ -1093,7 +1097,7 @@ babel-runtime@6.23.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -1236,10 +1240,6 @@ bootstrap@4.0.0:
 bootstrap@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.1.tgz#3aec85000fa619085da8d2e4983dfd67cf2114cb"
-
-bowser@^1.0.0:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
 
 bowser@^1.7.3:
   version "1.9.3"
@@ -1616,7 +1616,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.1.1:
+classnames@^2.1.1, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -2099,7 +2099,7 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -2593,6 +2593,12 @@ eslint-plugin-flowtype@2.39.1:
   dependencies:
     lodash "^4.15.0"
 
+eslint-plugin-flowtype@2.43.0:
+  version "2.43.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.43.0.tgz#47cdac5f01cda53f1c3e8477f0c83fee66a1606e"
+  dependencies:
+    lodash "^4.15.0"
+
 eslint-plugin-import@2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.7.0.tgz#21de33380b9efb55f5ef6d2e210ec0e07e7fa69f"
@@ -2846,10 +2852,6 @@ execa@^0.7.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
-
-exenv@^1.2.0, exenv@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 
 expand-brackets@^0.1.4:
   version "0.1.5"
@@ -3730,7 +3732,7 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
-hyphenate-style-name@^1.0.1, hyphenate-style-name@^1.0.2:
+hyphenate-style-name@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
 
@@ -3821,13 +3823,6 @@ inherits@2.0.1:
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-
-inline-style-prefixer@^2.0.0:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-2.0.5.tgz#c153c7e88fd84fef5c602e95a8168b2770671fe7"
-  dependencies:
-    bowser "^1.0.0"
-    hyphenate-style-name "^1.0.1"
 
 inline-style-prefixer@^3.0.6, inline-style-prefixer@^3.0.8:
   version "3.0.8"
@@ -4627,6 +4622,12 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
+jsonp@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/jsonp/-/jsonp-0.2.1.tgz#a65b4fa0f10bda719a05441ea7b94c55f3e15bae"
+  dependencies:
+    debug "^2.1.3"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -5222,6 +5223,10 @@ moment@^2.20.1:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
+moment@^2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -5694,6 +5699,12 @@ parse-passwd@^1.0.0:
 parse5@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-1.5.1.tgz#9b7f3b0de32be78dc2401b17573ccaf0f6f59d94"
+
+parse5@^3.0.2:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.3.tgz#042f792ffdd36851551cf4e9e066b3874ab45b5c"
+  dependencies:
+    "@types/node" "*"
 
 parseurl@~1.3.2:
   version "1.3.2"
@@ -6199,7 +6210,7 @@ prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7,
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.5.3, prop-types@^15.6.2:
+prop-types@^15.5.3:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -6339,6 +6350,10 @@ react-addons-css-transition-group@^15.6.2:
   dependencies:
     react-transition-group "^1.2.0"
 
+react-attr-converter@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/react-attr-converter/-/react-attr-converter-0.3.1.tgz#4a2abf6d907b7ddae4d862dfec80e489ce41ad6e"
+
 react-burger-menu@^2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.5.2.tgz#2be34466b51af80213591859654803bd07342fb4"
@@ -6429,29 +6444,6 @@ react-event-listener@^0.5.1:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
-react-grid-gallery@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/react-grid-gallery/-/react-grid-gallery-0.5.1.tgz#4e9d672d8f5fbae49c3db1669133fce03834e936"
-  dependencies:
-    prop-types "^15.5.8"
-    react-images "^0.5.16"
-
-react-image-lightbox@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-image-lightbox/-/react-image-lightbox-5.0.0.tgz#0c19aa8a43abf41262cbe082c779cc01f6334b5f"
-  dependencies:
-    prop-types "^15.6.1"
-    react-modal "^3.4.4"
-
-react-images@^0.5.16, react-images@^0.5.19:
-  version "0.5.19"
-  resolved "https://registry.yarnpkg.com/react-images/-/react-images-0.5.19.tgz#9339570029e065f9f28a19f03fdb5d9d5aa109d3"
-  dependencies:
-    aphrodite "^0.5.0"
-    prop-types "^15.6.0"
-    react-scrolllock "^2.0.1"
-    react-transition-group "2"
-
 react-intl@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.4.0.tgz#66c14dc9df9a73b2fbbfbd6021726e80a613eb15"
@@ -6471,29 +6463,9 @@ react-jss@^8.1.0:
     prop-types "^15.6.0"
     theming "^1.3.0"
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-
-react-lightbox-component@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-lightbox-component/-/react-lightbox-component-1.2.1.tgz#a66f24c15abd13950b0c35ff299e8b3627936b26"
-  dependencies:
-    prop-types "^15.6.2"
-    react-transition-group "1.x"
-
-react-medium-image-zoom@^3.0.13:
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-3.0.13.tgz#4d53a743e83dff5dec9b5eb5518d412d273bf94f"
-
-react-modal@^3.4.4:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.5.1.tgz#33d38527def90ea324848f7d63e53acc4468a451"
-  dependencies:
-    exenv "^1.2.0"
-    prop-types "^15.5.10"
-    react-lifecycles-compat "^3.0.0"
-    warning "^3.0.0"
 
 react-motion-ui-pack@^0.10.3:
   version "0.10.3"
@@ -6537,10 +6509,6 @@ react-progressive-image@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/react-progressive-image/-/react-progressive-image-0.3.0.tgz#dd28e299c474216f2d640def5d4bc5b09aea7457"
 
-react-prop-toggle@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-prop-toggle/-/react-prop-toggle-1.0.2.tgz#8b0b7e74653606b1427cfcf6c4eaa9198330568e"
-
 react-redux@^5.0.7:
   version "5.0.7"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
@@ -6551,6 +6519,13 @@ react-redux@^5.0.7:
     lodash-es "^4.17.5"
     loose-envify "^1.1.0"
     prop-types "^15.6.0"
+
+react-render-html@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/react-render-html/-/react-render-html-0.6.0.tgz#1af51d859ed75474435a1c65c293a48e12c36627"
+  dependencies:
+    parse5 "^3.0.2"
+    react-attr-converter "^0.3.1"
 
 react-router-dom@^4.2.0, react-router-dom@^4.2.2:
   version "4.2.2"
@@ -6672,12 +6647,14 @@ react-scrollbar-size@^2.0.2:
     react-event-listener "^0.5.1"
     stifle "^1.0.2"
 
-react-scrolllock@^2.0.1:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/react-scrolllock/-/react-scrolllock-2.0.7.tgz#3b879e1fe308fc900ab76e226e9be594c41226fd"
+react-share@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-share/-/react-share-2.2.0.tgz#49fa2525409a030d94375f8b9926b0db916c3049"
   dependencies:
-    exenv "^1.2.2"
-    react-prop-toggle "^1.0.2"
+    babel-runtime "^6.6.1"
+    classnames "^2.2.5"
+    jsonp "^0.2.1"
+    prop-types "^15.5.8"
 
 react-toastify@^3.2.2:
   version "3.4.3"
@@ -6687,7 +6664,7 @@ react-toastify@^3.2.2:
     prop-types "^15.6.0"
     react-transition-group "^2.2.1"
 
-react-transition-group@1.x, react-transition-group@^1.2.0, react-transition-group@^1.2.1:
+react-transition-group@^1.2.0, react-transition-group@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.1.tgz#e11f72b257f921b213229a774df46612346c7ca6"
   dependencies:
@@ -6697,21 +6674,18 @@ react-transition-group@1.x, react-transition-group@^1.2.0, react-transition-grou
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react-transition-group@2:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.4.0.tgz#1d9391fabfd82e016f26fabd1eec329dbd922b5a"
-  dependencies:
-    dom-helpers "^3.3.1"
-    loose-envify "^1.3.1"
-    prop-types "^15.6.2"
-    react-lifecycles-compat "^3.0.4"
-
 react-transition-group@^2.2.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:
     dom-helpers "^3.3.1"
     loose-envify "^1.3.1"
+    prop-types "^15.6.1"
+
+react-yandex-maps@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-2.2.0.tgz#032a51e5c3dd8ad40d93650128f0a10099300feb"
+  dependencies:
     prop-types "^15.6.1"
 
 react-youtube@^7.6.0:

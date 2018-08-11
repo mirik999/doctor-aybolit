@@ -2,6 +2,9 @@ import React, {Component, Fragment} from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import { Fa } from 'mdbreact';
 import _ from 'lodash';
+import Lightbox from 'react-images';
+//api
+import { galleryData, articlesData } from '../../data';
 
 
 const owlResponsiveSecond = {
@@ -57,45 +60,42 @@ const owlResponsiveFourth = {
   }
 };
 
-const text = {
-  text: "Lorem İpsum – dizayn nəşrlərində istifadə olunan düzgün olmayan mətndir. Dəqiq quruluşa malik olmayan " +
-  "bu mətn latincada hələ XVI əsrdə öz qəlib formasını almışdır."
-};
-
-const gallery = [
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475930/img10.jpg', id: 1},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475928/img11.jpg', id: 2},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475928/img9.jpg', id: 3},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475928/img3.jpg', id: 4},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475927/img8.jpg', id: 5},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475927/img2.jpg', id: 6},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475924/img4.jpg', id: 7},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475923/img7.jpg', id: 8},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475923/img1.jpg', id: 9},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475922/img5.jpg', id: 10},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475920/img6.jpg', id: 11},
-  {src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1533475920/img2.jpg', id: 12},
-];
-
 class GalleryKoshk extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      articles: [],
+      gallery: [],
+      isOpen: false,
+      currentImage: 0
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ gallery: galleryData, articles: articlesData })
+  }
+
+  openLightbox = (num) => {
+    this.setState({ isOpen: true, currentImage: num - 1})
+  };
+
+  gotoPrevLightboxImage = () => {
+    this.setState({ currentImage: this.state.currentImage - 1 })
+  };
+
+  gotoNextLightboxImage = () => {
+    this.setState({ currentImage: this.state.currentImage + 1 })
+  };
+
+  closeLightbox = () => {
+    this.setState({ isOpen: false })
+  };
 
   render() {
+    const { gallery, articles } = this.state;
 
-    // const a = gallery.map((gl, idx) => {
-    //   if (gl.id % 3 === 0) {
-    //     return (
-    //       <div>
-    //         <img src={gl.src} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-    //       </div>
-    //      );
-    //   }
-    //
-    //   return (
-    //     <img src={gl.src} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-    //   );
-    // });
-
-    // console.log(a)
+    if (gallery.length === 0 && articles.length === 0) return <div></div>
 
     return (
       <div className="row justify-content-center py-2 py-md-5">
@@ -114,24 +114,48 @@ class GalleryKoshk extends Component {
             loop
           >
             <div className="m-1 d-flex flex-column align-items-center">
-              <img src={require('../../lib/images/Gallery/img1.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img2.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img3.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
+              <img src={gallery[0].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[0].id)}
+              />
+              <img src={gallery[1].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[1].id)}
+              />
+              <img src={gallery[2].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[2].id)}
+              />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
-              <img src={require('../../lib/images/Gallery/img4.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img5.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img6.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
+              <img src={gallery[3].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[3].id)}
+              />
+              <img src={gallery[4].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[4].id)}
+              />
+              <img src={gallery[5].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[5].id)}
+              />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
-              <img src={require('../../lib/images/Gallery/img7.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img8.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img9.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
+              <img src={gallery[6].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[6].id)}
+              />
+              <img src={gallery[7].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[7].id)}
+              />
+              <img src={gallery[8].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[8].id)}
+              />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
-              <img src={require('../../lib/images/Gallery/img10.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img11.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
-              <img src={require('../../lib/images/Gallery/img3.jpg')} alt="gallery-1" className="mt-2 gl-image img-fluid" />
+              <img src={gallery[9].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[9].id)}
+              />
+              <img src={gallery[10].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[10].id)}
+              />
+              <img src={gallery[11].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(gallery[11].id)}
+              />
             </div>
           </OwlCarousel>
         </div>
@@ -185,38 +209,30 @@ class GalleryKoshk extends Component {
             dots={false}
             loop
           >
-            <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3">
-              <img src={require('../../lib/images/article1.jpg')} alt="article1" className="img-fluid art-img" />
-              <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                <div className="my-2 my-md-3 text-left w-100 art-header">Nümunə məqalə</div>
-                <small className="my-2 text-color text-justify art-mini-desc">
-                  {_.truncate(text.text, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
-                </small>
-                <a href="#" className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">DƏVAMINI OXU</a>
-              </div>
-            </div>
-            <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3">
-              <img src={require('../../lib/images/article2.jpg')} alt="article2" className="img-fluid art-img" />
-              <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                <div className="my-2 my-md-3 text-left w-100 art-header">Nümunə məqalə</div>
-                <small className="my-2 text-color text-justify art-mini-desc">
-                  {_.truncate(text.text, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
-                </small>
-                <a href="#" className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">DƏVAMINI OXU</a>
-              </div>
-            </div>
-            <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3">
-              <img src={require('../../lib/images/article3.jpg')} alt="article3" className="img-fluid art-img" />
-              <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                <div className="my-2 my-md-3 text-left w-100 art-header">Nümunə məqalə</div>
-                <small className="my-2 text-color text-justify art-mini-desc">
-                  {_.truncate(text.text, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
-                </small>
-                <a href="#" className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">DƏVAMINI OXU</a>
-              </div>
-            </div>
+            {
+              articles.map((art, idx) =>
+                <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3" key={idx}>
+                  <img src={art.img} alt="article2" className="img-fluid art-img" />
+                  <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
+                    <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.title, { 'length': 45 }) }</div>
+                    <small className="my-2 text-color text-justify art-mini-desc">
+                      {_.truncate(art.text, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
+                    </small>
+                    <a href="#" className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">DƏVAMINI OXU</a>
+                  </div>
+                </div>
+              )
+            }
           </OwlCarousel>
         </div>
+        <Lightbox
+          images={gallery}
+          currentImage={this.state.currentImage}
+          isOpen={this.state.isOpen}
+          onClickPrev={this.gotoPrevLightboxImage}
+          onClickNext={this.gotoNextLightboxImage}
+          onClose={this.closeLightbox}
+        />
       </div>
     );
   }

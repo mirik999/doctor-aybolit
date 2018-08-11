@@ -18,10 +18,21 @@
     background-color: transparent;
 }
 
+.video-img {
+
+}
+
 @media screen and (max-width: 557px) {
     .video-container iframe {
         width: 280px;
         height: 190px;
+    }
+}
+
+@media screen and (min-width: 778px) {
+    .video-card-wrap {
+        height: 100%;
+        min-width: 100% !important;
     }
 }
 

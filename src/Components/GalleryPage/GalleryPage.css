@@ -1,0 +1,31 @@
+.gallery-btns-wrap {
+    width: 120px;
+}
+
+.gallery-btns {
+    padding: 2px 0px;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    background-color: #DFE6E9;
+    color: #999999;
+    cursor: pointer;
+}
+
+.gallery-btns-active {
+    padding: 2px 0px;
+    border: 1px solid #00D2D3;
+    border-radius: 5px;
+    background-color: #00D2D3;
+    color: white;
+    cursor: pointer;
+}
+
+.masonry-grid {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.gallery-each-img {
+    width: 250px;
+    min-height: 170px;
+}

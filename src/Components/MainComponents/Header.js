@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { Fa } from 'mdbreact';
-import { slide as Menu } from 'react-burger-menu'
 //user components
 import Wrapper from './Wrapper.js';
 import BurgerMenu from './BurgerMenu.js';
@@ -44,7 +43,7 @@ class Header extends Component {
 						<NavLink exact to="/biography" className="header-nav-links font-18" activeClassName="active-link">BİOQRAFİYA</NavLink>
 						<NavLink exact to="/media" className="header-nav-links font-18" activeClassName="active-link">MEDİA</NavLink>
 						<NavLink exact to="/gallery" className="header-nav-links font-18" activeClassName="active-link">QALEREYA</NavLink>
-						<NavLink exact to="/articles" className="header-nav-links font-18" activeClassName="active-link">MƏQALƏLƏR</NavLink>
+						<NavLink to="/articles" className="header-nav-links font-18" activeClassName="active-link">MƏQALƏLƏR</NavLink>
 						<NavLink exact to="/contact" className="header-nav-links font-18" activeClassName="active-link">ƏLAQƏ</NavLink>
 					</div>
 				</div>
