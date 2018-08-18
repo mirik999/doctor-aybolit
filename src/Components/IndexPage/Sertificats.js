@@ -1,8 +1,35 @@
 import React, {PureComponent} from 'react';
 import OwlCarousel from 'react-owl-carousel';
+import ProgressiveImage from 'react-progressive-image';
 //user components
 import Lightbox from 'react-images';
-import { sert } from '../../data';
+
+const sert = [
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503590/3.png',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503590/3.png'
+  },
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503588/6.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503588/6.jpg'
+  },
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503587/4.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503587/4.jpg'
+  },
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503575/1.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503575/1.jpg'
+  },
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503574/2.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503574/2.jpg'
+  },
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503550/5.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503550/5.jpg'
+  },
+];
 
 
 const owlResponsiveFirst = {
@@ -77,9 +104,11 @@ class Sertificats extends PureComponent {
           >
             {
               sertificats.map((sert, idx) => {
-                return(  <img src={sert.src} alt="sertifikat-1"
-                              key={idx}
-                              className="doctors-sert mx-auto" onClick={() => this.openLightbox(idx)}/> )
+                return(
+                  <ProgressiveImage src={sert.src} placeholder={sert.srcSmall} key={idx}>
+                    { (src, loading, placeholder) => <img src={src} alt="Doctor" className="doctors-sert mx-auto" onClick={() => this.openLightbox(idx)} /> }
+                  </ProgressiveImage>
+                )
               })
             }
           </OwlCarousel>

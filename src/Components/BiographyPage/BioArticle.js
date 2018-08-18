@@ -25,7 +25,7 @@ class BlueRow extends PureComponent {
             </p>
             <div className="d-flex justify-content-end">
               <div className="col-4 col-sm-3">
-                <img src={require('../../lib/images/Signature.png')} alt="Signature" className="img-fluid doctors-signature" />
+                <img src={require('../../lib/images/signature.svg')} alt="Signature" className="img-fluid doctors-signature" />
               </div>
             </div>
           </div>

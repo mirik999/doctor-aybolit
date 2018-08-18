@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import _ from "lodash";
 import classNames from 'classnames';
 //api
-import { articlesData } from '../../data';
+import api from '../../api';
 
 
 class Articles extends PureComponent {
@@ -18,8 +18,9 @@ class Articles extends PureComponent {
     this.handlePageClick = this.handlePageClick.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({ articles: articlesData })
+  async componentDidMount() {
+    const articles = await api.admin.getArticles();
+    this.setState({ articles })
   }
 
   handlePageClick = (event) => {
@@ -32,8 +33,9 @@ class Articles extends PureComponent {
 
   render() {
     const { articles, currentPage, articlesPerPage } = this.state;
+    const { txt } = this.props;
 
-    if (articles.length === 0) return <div></div>;
+    if (articles.length === 0) return <div style={{ height: '800px' }}></div>;
 
     const indexOfLastTodo = currentPage * articlesPerPage;
     const indexOfFirstTodo = indexOfLastTodo - articlesPerPage;
@@ -41,13 +43,13 @@ class Articles extends PureComponent {
 
     const renderArticles = currentArticles.map((art, idx) =>
       <div className="article-card-wrap d-flex flex-column align-items-center justify-content-center m-3" key={idx}>
-        <img src={art.img} alt="article2" className="img-fluid article-img" />
+        <img src={art.artThumbnail} alt="article2" className="img-fluid article-img" />
         <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-          <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.title, { 'length': 45 }) }</div>
+          <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.artTitle, { 'length': 45 }) }</div>
           <small className="my-2 text-color text-justify art-mini-desc">
-            {_.truncate(art.text, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
+            {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
           </small>
-          <Link to={`/articles/${art.id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">DƏVAMINI OXU</Link>
+          <Link to={`/articles/${art._id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{txt.readmore}</Link>
         </div>
       </div>
     );

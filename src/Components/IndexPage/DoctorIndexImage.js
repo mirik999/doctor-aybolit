@@ -4,6 +4,8 @@ import ProgressiveImage from 'react-progressive-image';
 
 class DoctorIndexImage extends PureComponent {
   render() {
+    const { txt } = this.props;
+
     return (
       <div className="row">
         <div className="col-12 p-0 position-relative">
@@ -12,8 +14,9 @@ class DoctorIndexImage extends PureComponent {
           </ProgressiveImage>
           <div className="doctors-info d-flex flex-column">
             <span className="doctors-name font-64 mb-1 mb-md-0">Dr.Fərman Həsənov</span>
-            <div className="mt-1 mt-sm-3 mt-md-4">
-              <span className="doctors-prof font-28-fix">Ağız və üz-çənə cərrahı</span>
+            <div className="doctors-pros-wrap mt-1 mt-sm-3 mt-md-4 d-flex flex-column font-28-fix p-lg-2 font-weight-light">
+              <span className="doctors-prof">{ txt.doctorProf1 }</span>
+              <span className="doctors-prof">{ txt.doctorProf2 }</span>
             </div>
           </div>
         </div>

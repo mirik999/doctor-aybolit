@@ -3,11 +3,13 @@ import React, {PureComponent} from 'react';
 
 class DoctorInfo extends PureComponent {
   render() {
+    const { txt } = this.props;
+
     return (
       <div className="row justify-content-center px-3 px-md-0 pt-2 pt-md-3 pt-xl-5">
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center">
           <span className="doctors-name-2 font-39 my-1 my-md-2">PhD Dr. Fərman Həsənov</span>
-          <span className="doctors-prof-2 font-28 my-1 my-md-3">Ağız və üz-çənə cərrahı</span>
+          <span className="doctors-prof-2 font-28 my-1 my-md-3">{ txt.doctorProf }</span>
           <div className="doctors-mini-article my-1 my-md-3">
             <p className="font-16 text-justify">
               Çoxları düşünür ki, Lorem Ipsum latıncadan təsadüfü seçilmiş sözcüklərdən ibarətdir, amma bu belə deyil.
@@ -24,7 +26,7 @@ class DoctorInfo extends PureComponent {
             </p>
             <div className="d-flex justify-content-end">
               <div className="col-4 col-sm-3">
-                <img src={require('../../lib/images/Signature.png')} alt="Signature" className="img-fluid doctors-signature" />
+                <img src={require('../../lib/images/signature.svg')} alt="Signature" className="img-fluid doctors-signature" />
               </div>
             </div>
           </div>

@@ -1,20 +1,52 @@
 .y-map {
     width: 100%;
-    height: 360px;
+    height: 450px;
 }
 
 .contact-icon {
     width: 40px;
 }
 
-@media screen and (max-width: 501px) {
-    .y-map {
-        height: 300px;
-    }
+.contact-inp {
+    padding: 10px 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    width: 100%;
 }
 
-@media screen and (max-width: 401px) {
-    .y-map {
-        height: 200px;
-    }
+.contact-inp-mini {
+    padding: 10px 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    width: 100%;
 }
+
+.contact-txtarea {
+    padding: 10px 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 150px;
+}
+
+.contact-inp:focus , .contact-inp-mini:focus , .contact-txtarea:focus , .contact-btn:focus {
+    outline: none;
+}
+
+.contact-inp::placeholder , .contact-inp-mini::placeholder , .contact-txtarea::placeholder {
+    color: #999999;
+}
+
+.contact-btn {
+    padding: 5px 20px;
+    background-color: #00D2D3;
+    color: white;
+    border: 1px solid #00D2D3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* media screens */

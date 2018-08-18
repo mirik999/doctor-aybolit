@@ -1,10 +1,12 @@
 import React, {Component, Fragment} from 'react';
+import { Link } from 'react-router-dom';
 import OwlCarousel from 'react-owl-carousel';
 import { Fa } from 'mdbreact';
 import _ from 'lodash';
 import Lightbox from 'react-images';
-//api
+//api requests
 import { galleryData, articlesData } from '../../data';
+import api from '../../api';
 
 
 const owlResponsiveSecond = {
@@ -60,6 +62,11 @@ const owlResponsiveFourth = {
   }
 };
 
+const bookImg = {
+  book1: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504861/book2.png',
+  book2: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504855/book1.png'
+};
+
 class GalleryKoshk extends Component {
   constructor(props) {
     super(props);
@@ -67,13 +74,17 @@ class GalleryKoshk extends Component {
     this.state = {
       articles: [],
       gallery: [],
+      quotes: [],
       isOpen: false,
       currentImage: 0
     }
   }
 
-  componentDidMount() {
-    this.setState({ gallery: galleryData, articles: articlesData })
+  async componentDidMount() {
+    const quotes = await api.admin.getQuotes();
+    const articles = await api.admin.getArticles();
+    const gallery = await api.admin.getPhotos();
+    this.setState({ gallery, articles, quotes })
   }
 
   openLightbox = (num) => {
@@ -93,15 +104,16 @@ class GalleryKoshk extends Component {
   };
 
   render() {
-    const { gallery, articles } = this.state;
+    const { gallery, articles, quotes } = this.state;
+    const { txt } = this.props;
 
-    if (gallery.length === 0 && articles.length === 0) return <div></div>
+    if (gallery.length === 0 && articles.length === 0) return <div style={{ height: '800px' }}></div>;
 
     return (
       <div className="row justify-content-center py-2 py-md-5">
         <div className="col-12 col-lg-5 border-right">
           <div className="py-2 border-bottom text-left position-relative">
-            <span className="font-32 text-color">Qalereya</span>
+            <span className="font-32 text-color">{ txt.gallery }</span>
           </div>
           <OwlCarousel
             className="owl-second owl-theme pt-2 pb-2"
@@ -115,46 +127,46 @@ class GalleryKoshk extends Component {
           >
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[0].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[0].id)}
+                   //onClick={() => this.openLightbox(gallery[0]._id)}
               />
               <img src={gallery[1].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[1].id)}
+                   //onClick={() => this.openLightbox(gallery[1]._id)}
               />
               <img src={gallery[2].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[2].id)}
+                   //onClick={() => this.openLightbox(gallery[2]._id)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[3].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[3].id)}
+                   //onClick={() => this.openLightbox(gallery[3]._id)}
               />
               <img src={gallery[4].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[4].id)}
+                   //onClick={() => this.openLightbox(gallery[4]._id)}
               />
               <img src={gallery[5].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[5].id)}
+                   //onClick={() => this.openLightbox(gallery[5]._id)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[6].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[6].id)}
+                   //onClick={() => this.openLightbox(gallery[6]._id)}
               />
               <img src={gallery[7].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[7].id)}
+                   //onClick={() => this.openLightbox(gallery[7]._id)}
               />
               <img src={gallery[8].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[8].id)}
+                   //onClick={() => this.openLightbox(gallery[8]._id)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[9].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[9].id)}
+                   //onClick={() => this.openLightbox(gallery[9]._id)}
               />
               <img src={gallery[10].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[10].id)}
+                   //onClick={() => this.openLightbox(gallery[10]._id)}
               />
               <img src={gallery[11].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[11].id)}
+                   //onClick={() => this.openLightbox(gallery[11]._id)}
               />
             </div>
           </OwlCarousel>
@@ -162,7 +174,7 @@ class GalleryKoshk extends Component {
         {/* ----------------- second owl -------------- */}
         <div className="col-12 col-lg-5">
           <div className="py-2 border-bottom text-left position-relative">
-            <span className="font-32 text-color">Sözlər köşkü</span>
+            <span className="font-32 text-color">{ txt.koshk }</span>
           </div>
           <OwlCarousel
             className="owl-second owl-theme pt-2 pb-2 d-flex justify-content-center"
@@ -173,31 +185,36 @@ class GalleryKoshk extends Component {
             navText={[]}
             dots={false}
           >
-            <div className="m-1 d-flex flex-column align-items-center justify-content-center">
-              <div className="koshk-wrap d-flex align-items-center justify-content-center position-relative">
-                <span className="font-weight-bold">
-                  Lorem İpsum – dizayn nəşrlərində istifadə olunan düzgün olmayan mətndir. Dəqiq quruluşa malik
-                  olmayan bu mətn latincada hələ XVI əsrdə öz qəlib formasını almışdır.
-                </span>
-                <span className="koshk-quote-left"><Fa icon="quote-left" /></span>
-                <span className="koshk-quote-right"><Fa icon="quote-right" /></span>
-              </div>
-              <div className="d-flex align-items-center justify-content-end w-100">
-                <div className="koshk-info d-flex flex-column align-items-end mr-3">
-                  <span className="font-18 font-weight-bold">NÜMUNƏ KİTAB</span>
-                  <small className="text-secondary">5-ci səhifə, Lorem Ipsum, 2-ci paraqraf</small>
-                </div>
-                <div className="koshk-book mt-2 mt-md-3">
-                  <img src={require('../../lib/images/book.png')} alt="koshk-book" className="img-fluid koshk-book" />
-                </div>
-              </div>
-            </div>
+            {
+              quotes.map((qt, idx) => {
+                return(
+                  <div className="m-1 d-flex flex-column align-items-center justify-content-center" key={idx}>
+                    <div className="koshk-wrap d-flex align-items-center justify-content-center position-relative">
+                      <span className="font-weight-bold fix-quote-height">
+                        { qt.quote }
+                      </span>
+                      <span className="koshk-quote-left"><Fa icon="quote-left" /></span>
+                      <span className="koshk-quote-right"><Fa icon="quote-right" /></span>
+                    </div>
+                    <div className="d-flex align-items-center justify-content-end w-100">
+                      <div className="koshk-info d-flex flex-column align-items-end mr-3">
+                        <span className="font-18 font-weight-bold">{ qt.book === 'book1' ? 'BİR ÖMRÜN NƏĞMƏSİ' : 'KÖNÜL SÖHBƏTİ' }</span>
+                        <small className="text-secondary">{ qt.bookPage }</small>
+                      </div>
+                      <div className="koshk-book mt-2 mt-md-3">
+                        <img src={qt.book === 'book1' ? bookImg.book1 : bookImg.book2} alt="koshk-book" className="img-fluid koshk-book" />
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </OwlCarousel>
         </div>
         {/*------------- third owl ------------- */}
         <div className="col-12 col-md-10 d-flex flex-column align-items-center">
           <div className="text-left position-relative text-center py-2 mt-5 border-bottom w-50">
-            <span className="font-32 text-color m-2 m-md-3">Məqalələr</span>
+            <span className="font-32 text-color m-2 m-md-3">{ txt.articles }</span>
           </div>
           <OwlCarousel
             className="owl-fifth owl-theme pt-2 pb-2 d-flex justify-content-center position-relative"
@@ -212,13 +229,13 @@ class GalleryKoshk extends Component {
             {
               articles.map((art, idx) =>
                 <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3" key={idx}>
-                  <img src={art.img} alt="article2" className="img-fluid art-img" />
+                  <img src={art.artThumbnail} alt="article2" className="img-fluid art-img" />
                   <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                    <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.title, { 'length': 45 }) }</div>
+                    <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.artTitle, { 'length': 45 }) }</div>
                     <small className="my-2 text-color text-justify art-mini-desc">
-                      {_.truncate(art.text, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
+                      {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
                     </small>
-                    <a href="#" className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">DƏVAMINI OXU</a>
+                    <Link to={`/articles/${art._id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{ txt.readmore }</Link>
                   </div>
                 </div>
               )

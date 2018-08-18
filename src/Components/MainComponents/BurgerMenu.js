@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
-import { Fa } from 'mdbreact';
 import { slide as Menu } from 'react-burger-menu'
-//user components
-import Wrapper from './Wrapper.js';
 
 
-class Header extends Component {
+class BurgerMenu extends Component {
   render() {
     return (
         <div className="col-12 d-block d-lg-none px-0">
           <Menu styles={styles} right>
             <div className="d-flex flex-column justify-content-center align-items-center px-0">
-              <img src={require('../../lib/svg/Logo/Logo (white).svg')} alt="white-logo" className="img-fluid mb-4" />
+              <img src={require('../../lib/images/Logo/Logo-footer.svg')} alt="white-logo" className="img-fluid mb-4" />
               <NavLink exact to="/" className="burger-nav-links" activeClassName="active-link-burger">ƏSAS SƏHİFƏ</NavLink>
               <NavLink exact to="/biography" className="burger-nav-links" activeClassName="active-link-burger">BİOQRAFİYA</NavLink>
               <NavLink exact to="/media" className="burger-nav-links" activeClassName="active-link-burger">MEDİA</NavLink>
@@ -64,4 +61,4 @@ const styles = {
   }
 };
 
-export default Header;
+export default BurgerMenu;

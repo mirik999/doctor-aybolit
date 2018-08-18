@@ -1,19 +1,9 @@
 import React, {PureComponent, Fragment} from 'react';
-import Masonry from 'react-masonry-component';
 import classNames from 'classnames';
 import ShowMore from '@tedconf/react-show-more';
 import Lightbox from 'react-images';
 //api
-import { galleryData } from '../../data';
-
-const masonryOptions = {
-  itemSelector: '.gallery-each-img',
-  columnWidth: 250,
-  percentPosition: true,
-  gutter: 10,
-  isFitWidth: true,
-  stagger: 30
-};
+// import { galleryData } from '../../data';
 
 class GalleryGrid extends PureComponent {
   constructor(props) {
@@ -21,17 +11,13 @@ class GalleryGrid extends PureComponent {
 
     this.state = {
       galleryCategory: 'global',
-      gallery: [],
+      gallery: props.photos,
       isOpen: false,
       currentImage: 0
     };
 
     this.onCategory = this.onCategory.bind(this);
   }
-
-  componentDidMount() {
-    this.setState({ gallery: galleryData });
-  };
 
   openLightbox = (num) => {
     this.setState({ isOpen: true, currentImage: num })
@@ -55,8 +41,7 @@ class GalleryGrid extends PureComponent {
 
   render() {
     const { gallery, galleryCategory } = this.state;
-
-    if (gallery.length === 0) return <div></div>;
+    const { txt } = this.props;
 
     return (
       <Fragment>
@@ -67,32 +52,32 @@ class GalleryGrid extends PureComponent {
                 <div className={classNames({
                   "gallery-btns": galleryCategory !== 'global',
                   "gallery-btns-active": galleryCategory === 'global',
-                })} onClick={() => this.onCategory('global')}>Global</div>
+                })} onClick={() => this.onCategory('global')}>{ txt.global }</div>
               </div>
               <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">
                 <div className={classNames({
                   "gallery-btns": galleryCategory !== 'colleague',
                   "gallery-btns-active": galleryCategory === 'colleague',
-                })} onClick={() => this.onCategory('colleague')}>Collegue</div>
+                })} onClick={() => this.onCategory('collective')}>{ txt.collective }</div>
               </div>
               <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">
                 <div className={classNames({
                   "gallery-btns": galleryCategory !== 'procedure',
                   "gallery-btns-active": galleryCategory === 'procedure',
-                })} onClick={() => this.onCategory('procedure')}>Procedure</div>
+                })} onClick={() => this.onCategory('procedure')}>{ txt.procedure }</div>
               </div>
               <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">
                 <div className={classNames({
                   "gallery-btns": galleryCategory !== 'drugs',
                   "gallery-btns-active": galleryCategory === 'drugs',
-                })} onClick={() => this.onCategory('drugs')}>Drugs</div>
+                })} onClick={() => this.onCategory('drugs')}>{ txt.drugs }</div>
               </div>
-              <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">
-                <div className={classNames({
-                  "gallery-btns": galleryCategory !== 'walk',
-                  "gallery-btns-active": galleryCategory === 'walk',
-                })} onClick={() => this.onCategory('walk')}>Walking</div>
-              </div>
+              {/*<div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">*/}
+                {/*<div className={classNames({*/}
+                  {/*"gallery-btns": galleryCategory !== 'walk',*/}
+                  {/*"gallery-btns-active": galleryCategory === 'walk',*/}
+                {/*})} onClick={() => this.onCategory('walk')}>{ txt.relax }</div>*/}
+              {/*</div>*/}
             </div>
           </div>
         </div>
@@ -114,7 +99,7 @@ class GalleryGrid extends PureComponent {
                               <img src={gl.src} key={idx} className="gallery-each-img img-fluid m-2" onClick={() => this.openLightbox(idx)} />
                             )
                           }) :
-                          current.filter(gal => gal.section == galleryCategory).map((gl, idx) => {
+                          current.filter(gal => gal.category == galleryCategory).map((gl, idx) => {
                             return (
                               <img src={gl.src} key={idx} className="gallery-each-img img-fluid m-2" onClick={() => this.openLightbox(idx)} />
                             )
@@ -124,7 +109,7 @@ class GalleryGrid extends PureComponent {
                         <button className="video-watch-btn border p-2 my-1 text-color-blue cursor-pointer font-weight-bold"
                                 disabled={!onMore} onClick={() => { if (!!onMore) onMore(); }}
                           >
-                          DAHA ÇOX GÖSTƏR
+                          { txt.morecontent }
                         </button>
                       </div>
                     </Fragment>
@@ -133,7 +118,7 @@ class GalleryGrid extends PureComponent {
 
           </div>
           <Lightbox
-            images={galleryCategory == 'global' ? gallery : gallery.filter(gal => gal.section == galleryCategory)}
+            images={galleryCategory == 'global' ? gallery : gallery.filter(gal => gal.category == galleryCategory)}
             currentImage={this.state.currentImage}
             isOpen={this.state.isOpen}
             onClickPrev={this.gotoPrevLightboxImage}

@@ -28,7 +28,7 @@
 
 .header-logo {
 	position: absolute;
-	bottom: 40px;
+	bottom: 20px;
     min-width: 220px;
 }
 
@@ -45,7 +45,13 @@
 .doctors-info {
     position: absolute;
     top: 40%;
-    left: 20%;
+    left: 9%;
+}
+
+.doctors-pros-wrap {
+    background-color: #4F4F4F;
+    opacity: 0.7;
+    line-height: 80%;
 }
 
 .doctors-name {
@@ -59,8 +65,6 @@
 .doctors-prof {
     color: white;
     padding: 10px 20px;
-    background-color: #4F4F4F;
-    opacity: 0.7;
 }
 
 .doctors-cover-img {
@@ -194,6 +198,11 @@
     vertical-align: middle;
 }
 
+.gl-image {
+    min-width: 100%;
+    min-height: 130px;
+}
+
 .koshk-wrap {
     padding: 75px 45px;
     background-color: #00D2D3;
@@ -201,7 +210,43 @@
     border-radius: 10px;
     width: 100%;
     text-align: center;
+    max-height: 300px;
+    overflow: hidden;
 }
+
+.fix-quote-height {
+    max-height: 175px;
+    overflow: auto;
+}
+
+
+.fix-quote-height::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.66);
+    background-color: rgba(245, 245, 245, 0.6);
+    border-radius: 10px;
+}
+
+.fix-quote-height::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: rgba(245, 245, 245, 0);
+}
+
+.fix-quote-height::-webkit-scrollbar-thumb
+{
+    background-color: rgba(170, 170, 170, 0);
+    border-radius: 10px;
+    background-image: -webkit-linear-gradient(90deg,
+    rgba(0, 0, 0, .2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, .2) 50%,
+    rgba(0, 0, 0, .2) 75%,
+    transparent 75%,
+    transparent)
+}
+
 
 .koshk-book {
     max-width: 75px;
@@ -250,7 +295,7 @@
     top: 250px;
     right: -2px;
     background-color: #00D2D3;
-    width: 25px;
+    width: 24px;
     height: 65px;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -321,13 +366,19 @@
     color: #DFE6E9
 }
 
+.footer-color:hover {
+    text-decoration: none;
+    color: #DFE6E9;
+}
+
 .footer-heading {
     border-bottom: 2px solid #00D2D3;
 }
 
 .footer-art-img {
-    max-width: 108px;
+    max-width: 108px !important;
     max-height: 74px;
+    width: 100%;
 }
 
 .footer-add-icon {
@@ -364,12 +415,31 @@
     .header-logo {
         bottom: 15px;
     }
+    .doctors-pros-wrap {
+        line-height: 60%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .doctors-info {
+        top: 25%;
+        left: 1%;
+    }
 }
 
 @media screen and (max-width: 601px) {
     .doctors-info {
-        top: 30%;
-        left: 10%;
+        top: 20%;
+        left: 1%;
+    }
+    .doctors-pros-wrap {
+        line-height: 40%;
     }
 }
 
+@media screen and (max-width: 401px) {
+    .doctors-info {
+        top: 15%;
+        left: 1%;
+    }
+}

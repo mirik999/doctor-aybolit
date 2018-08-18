@@ -1,9 +1,9 @@
 import { SWITCH_LANG } from '../types';
 
-export default function locale(state = { lang: "en" }, action = {}) {
+export default function locale(state = { lang: "az" }, action = {}) {
 	switch(action.type) {
 		case SWITCH_LANG:
-			return { ...state, lang: action.lang }
+			return { ...state, lang: action.lang };
 		default:
 			return state;
 	}

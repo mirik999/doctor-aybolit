@@ -3,6 +3,8 @@ import React, {PureComponent, Fragment} from 'react';
 
 class Bio extends PureComponent {
   render() {
+    const { txt } = this.props;
+
     return (
       <div className="row justify-content-center border-top">
         <div className="col-12 col-md-10">
@@ -10,7 +12,7 @@ class Bio extends PureComponent {
             <div className="col-12 col-lg-6 d-flex align-items-start justify-content-center">
               <div className="d-flex flex-column justify-content-center p-2 p-md-4">
                 <span className="doctors-name-2 font-39 my-1 my-md-2">PhD Dr. Fərman Həsənov</span>
-                <span className="doctors-prof-2 font-28 my-1 my-md-3">Ağız və üz-çənə cərrahı</span>
+                <span className="doctors-prof-2 font-28 my-1 my-md-3">{ txt.doctorProf }</span>
                 <div className="doctors-mini-article my-1 my-md-3">
                   <p className="font-16 text-justify">
                     Çoxları düşünür ki, Lorem Ipsum latıncadan təsadüfü seçilmiş sözcüklərdən ibarətdir, amma bu belə deyil.

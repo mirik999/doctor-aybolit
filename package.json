@@ -1,7 +1,7 @@
 {
-  "name": "ReactStartProject",
+  "name": "Dr.FermanHesenov",
   "author": "Mirali Rafiyev",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@tedconf/react-show-more": "^1.1.2",
@@ -9,14 +9,22 @@
     "bootstrap": "^4.1.0",
     "classnames": "^2.2.6",
     "font-awesome": "^4.7.0",
+    "google-translate": "^2.2.0",
+    "google-translate-api": "^2.3.0",
+    "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
     "material-ui": "^1.0.0-beta.43",
     "mdbreact": "git+https://github.com/mdbootstrap/React-Bootstrap-with-Material-Design.git",
+    "medium-zoom": "^0.4.0",
     "moment": "^2.22.2",
+    "nprogress": "^0.2.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-burger-menu": "^2.5.2",
     "react-dom": "^16.3.2",
+    "react-dropzone": "^4.3.0",
+    "react-helmet": "^5.2.0",
+    "react-images": "^0.5.19",
     "react-intl": "^2.4.0",
     "react-owl-carousel": "2.2.0",
     "react-progressive-image": "^0.3.0",
@@ -24,18 +32,26 @@
     "react-render-html": "^0.6.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-select": "^2.0.0",
     "react-share": "^2.2.0",
+    "react-toastify": "^4.2.0",
     "react-yandex-maps": "^2.2.0",
     "react-youtube": "^7.6.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "sha1": "^1.1.1",
+    "superagent": "^3.8.3",
+    "yandex-translate": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "build:push": "yarn build && git add . && git commit -m 'deploy' && git push origin master",
+    "git:push": "git add . && git commit -m 'deploy' && git push origin master"
+  },
+  "proxy": "http://localhost:4000"
 }

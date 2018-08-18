@@ -1,12 +1,29 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { Fa } from 'mdbreact';
 //user components
 import Wrapper from './Wrapper.js';
 import BurgerMenu from './BurgerMenu.js';
+// actions
+import { setlocale } from '../../Actions/locale';
 
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.txt = {
+      mainLink: <FormattedMessage id="main.main-link" />,
+      bioLink: <FormattedMessage id="main.bio-link" />,
+      mediaLink: <FormattedMessage id="main.media-link" />,
+      galleryLink: <FormattedMessage id="main.gallery-link" />,
+      artLink: <FormattedMessage id="main.art-link" />,
+      contactLink: <FormattedMessage id="main.contact-link" />,
+    };
+  }
+
 	render() {
 		return (
 			<Wrapper>
@@ -14,9 +31,9 @@ class Header extends Component {
           <BurgerMenu />
 					<div className="col-9 col-md-7 text-left font-16 py-2 px-0 px-sm-2" style={styles.headerInfo}>
             <span className="ml-2 ml-md-0 mr-1 mr-sm-2"><Fa icon="phone" /></span>
-            <a href="tel:994127654321" className="text-color">+994 12 7654321</a>
+            <a href="tel:994503184345" className="text-color">+994 50 3184345</a>
             <span className="ml-2 ml-md-5 mr-1 mr-sm-2"><Fa icon="envelope-o" /></span>
-            <a href="mailto:melumat@fermanhesenov.az" className="text-color">melumat@fermanhesenov.az</a>
+            <a href="mailto:hekim@fermanhesenov.az" className="text-color">hekim@fermanhesenov.az</a>
 					</div>
 					<div className="col-3 col-md-3 d-flex justify-content-end py-2 px-0 px-sm-2">
 						<div className="header-social d-none d-sm-flex align-items-center mr-2 pr-1 border-right">
@@ -25,9 +42,9 @@ class Header extends Component {
 							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="youtube" /></a>
 						</div>
 						<div className="header-lang d-flex align-items-center font-16 ml-1" style={styles.headerInfo}>
-							<span className="mr-2 cursor-pointer">AZ</span>
-							<span className="mr-2 cursor-pointer">EN</span>
-							<span className="cursor-pointer">RU</span>
+							<span className="mr-2 cursor-pointer" onClick={() => { this.props.setlocale("az") }}>AZ</span>
+							<span className="mr-2 cursor-pointer" onClick={() => { this.props.setlocale("en") }}>EN</span>
+							<span className="cursor-pointer" onClick={() => { this.props.setlocale("ru") }}>RU</span>
 						</div>
 					</div>
 				</div>
@@ -39,12 +56,12 @@ class Header extends Component {
 						<img src={require('../../lib/images/Logo/Logo-header.svg')} alt="logo" className="img-fluid header-logo" />
 					</div>
 					<div className="col-lg-7 d-none d-lg-flex justify-content-end align-items-start px-0">
-						<NavLink exact to="/" className="header-nav-links font-18" activeClassName="active-link">ƏSAS SƏHİFƏ</NavLink>
-						<NavLink exact to="/biography" className="header-nav-links font-18" activeClassName="active-link">BİOQRAFİYA</NavLink>
-						<NavLink exact to="/media" className="header-nav-links font-18" activeClassName="active-link">MEDİA</NavLink>
-						<NavLink exact to="/gallery" className="header-nav-links font-18" activeClassName="active-link">QALEREYA</NavLink>
-						<NavLink to="/articles" className="header-nav-links font-18" activeClassName="active-link">MƏQALƏLƏR</NavLink>
-						<NavLink exact to="/contact" className="header-nav-links font-18" activeClassName="active-link">ƏLAQƏ</NavLink>
+						<NavLink exact to="/" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.mainLink }</NavLink>
+						<NavLink exact to="/biography" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.bioLink }</NavLink>
+						<NavLink exact to="/media" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.mediaLink }</NavLink>
+						<NavLink exact to="/gallery" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.galleryLink }</NavLink>
+						<NavLink to="/articles" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.artLink }</NavLink>
+						<NavLink exact to="/contact" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.contactLink }</NavLink>
 					</div>
 				</div>
 			</Wrapper>
@@ -67,5 +84,11 @@ const styles = {
 	},
 };
 
+function mapStateToProps(state) {
+  return {
+    lang: state.locale.lang
+  }
+}
 
-export default Header;
+
+export default connect(mapStateToProps, { setlocale },  null, { pure: false })(Header);
