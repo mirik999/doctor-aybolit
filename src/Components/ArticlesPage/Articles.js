@@ -45,7 +45,9 @@ class Articles extends PureComponent {
       <div className="article-card-wrap d-flex flex-column align-items-center justify-content-center m-3" key={idx}>
         <img src={art.artThumbnail} alt="article2" className="img-fluid article-img" />
         <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-          <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.artTitle, { 'length': 45 }) }</div>
+          <div className="my-2 my-md-3 text-left w-100 art-header">
+            <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 45 }) }</Link>
+          </div>
           <small className="my-2 text-color text-justify art-mini-desc">
             {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
           </small>

@@ -56,8 +56,8 @@ class GalleryGrid extends PureComponent {
               </div>
               <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">
                 <div className={classNames({
-                  "gallery-btns": galleryCategory !== 'colleague',
-                  "gallery-btns-active": galleryCategory === 'colleague',
+                  "gallery-btns": galleryCategory !== 'collective',
+                  "gallery-btns-active": galleryCategory === 'collective',
                 })} onClick={() => this.onCategory('collective')}>{ txt.collective }</div>
               </div>
               <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">

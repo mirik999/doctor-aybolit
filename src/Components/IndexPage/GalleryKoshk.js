@@ -37,7 +37,7 @@ const owlResponsiveThird = {
     nav:false,
   },
   700 : {
-    items: 2,
+    items: 1,
     nav:false,
   },
   990 : {
@@ -85,11 +85,11 @@ class GalleryKoshk extends Component {
     const quotes = await api.admin.getQuotes();
     const articles = await api.admin.getArticles();
     const gallery = await api.admin.getPhotos();
-    this.setState({ gallery, articles, quotes })
+    this.setState({ gallery: gallery.reverse().slice(Math.max(gallery.length - 13)), articles, quotes })
   }
 
   openLightbox = (num) => {
-    this.setState({ isOpen: true, currentImage: num})
+    this.setState({ isOpen: true, currentImage: num })
   };
 
   gotoPrevLightboxImage = () => {
@@ -128,46 +128,46 @@ class GalleryKoshk extends Component {
           >
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[0].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[0]._id)}
+                   onClick={() => this.openLightbox(0)}
               />
               <img src={gallery[1].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[1]._id)}
+                   onClick={() => this.openLightbox(1)}
               />
               <img src={gallery[2].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[2]._id)}
+                   onClick={() => this.openLightbox(2)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[3].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[3]._id)}
+                   onClick={() => this.openLightbox(3)}
               />
               <img src={gallery[4].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[4]._id)}
+                   onClick={() => this.openLightbox(4)}
               />
               <img src={gallery[5].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[5]._id)}
+                   onClick={() => this.openLightbox(5)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[6].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[6]._id)}
+                   onClick={() => this.openLightbox(6)}
               />
               <img src={gallery[7].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[7]._id)}
+                   onClick={() => this.openLightbox(7)}
               />
               <img src={gallery[8].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[8]._id)}
+                   onClick={() => this.openLightbox(8)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[9].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[9]._id)}
+                   onClick={() => this.openLightbox(9)}
               />
               <img src={gallery[10].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[10]._id)}
+                   onClick={() => this.openLightbox(10)}
               />
               <img src={gallery[11].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   onClick={() => this.openLightbox(gallery[11]._id)}
+                   onClick={() => this.openLightbox(11)}
               />
             </div>
           </OwlCarousel>
@@ -243,7 +243,9 @@ class GalleryKoshk extends Component {
                 <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3" key={idx}>
                   <img src={art.artThumbnail} alt="article2" className="img-fluid art-img" />
                   <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                    <div className="my-2 my-md-3 text-left w-100 art-header">{ _.truncate(art.artTitle, { 'length': 45 }) }</div>
+                    <div className="my-2 my-md-3 text-left w-100 art-header">
+                      <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 45 }) }</Link>
+                    </div>
                     <small className="my-2 text-color text-justify art-mini-desc">
                       {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
                     </small>

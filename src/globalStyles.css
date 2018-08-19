@@ -6,6 +6,17 @@
     color: #00D2D3;
 }
 
+.text-color-blue:hover {
+    color: #00D2D3;
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.out-none:hover {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
 .text-color:hover {
     color: #4F4F4F;
     text-decoration: none !important;

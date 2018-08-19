@@ -53,7 +53,9 @@ class Header extends Component {
 				<div className="row justify-content-start justify-content-lg-center" style={styles.headerNavBar}>
           <div className="d-none d-md-block d-lg-none col-1"></div>
 					<div className="col-3 col-lg-3 d-flex align-start px-md-0">
-						<img src={require('../../lib/images/Logo/Logo-header.svg')} alt="logo" className="img-fluid header-logo" />
+            <NavLink exact to="/">
+							<img src={require('../../lib/images/Logo/Logo-header.svg')} alt="logo" className="img-fluid header-logo" />
+						</NavLink>
 					</div>
 					<div className="col-lg-7 d-none d-lg-flex justify-content-end align-items-start px-0">
 						<NavLink exact to="/" className="header-nav-links font-18" activeClassName="active-link">{ this.txt.mainLink }</NavLink>

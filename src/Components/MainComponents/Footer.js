@@ -6,8 +6,8 @@ import { FormattedMessage } from 'react-intl';
 import _ from "lodash";
 //user components
 import Wrapper from './Wrapper.js';
-//api
-import { articlesData } from '../../data';
+//api requests
+import api from '../../api';
 //actions
 import { setlocale } from "../../Actions/locale";
 
@@ -37,8 +37,9 @@ class Footer extends PureComponent {
     }
   }
 
-  componentDidMount() {
-    this.setState({ articles: articlesData.slice(Math.max(articlesData.length - 2, 1)) })
+  async componentDidMount() {
+    const articles = await api.admin.getArticles();
+    this.setState({ articles: articles.reverse().slice(Math.max(articles.length - 2, 0)) })
   }
 
   onScrollUp = () => {
@@ -51,6 +52,8 @@ class Footer extends PureComponent {
 
   render() {
     const { articles } = this.state;
+
+    console.log(articles)
 
     return (
       <Wrapper>
@@ -87,14 +90,14 @@ class Footer extends PureComponent {
                   articles.map((art, idx) => {
                     return(
                       <div className="footer-art-wrap d-flex w-100 my-2" key={idx}>
-                        <img src={art.img} alt="" className="img-fluid footer-art-img" />
+                        <img src={art.artThumbnail} alt="" className="img-fluid footer-art-img" />
                         <div className="d-flex flex-column w-100 ml-2">
                           <span className="footer-art-name font-weight-bold" style={{ color: '#00D2D3' }}>
-                            { _.truncate(art.text, { 'length': 30 }) }
-                            </span>
+                            <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 30 }) }</Link>
+                          </span>
                           <small className="font-12">
-                            { _.truncate(art.text, { 'length': 80 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ') }
-                            <Link to={`/articles/${art.id}`} className="font-weight-bold" style={styles.footerColor}> &nbsp; { this.txt.readmore }</Link>
+                            { _.truncate(art.artText, { 'length': 80 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ') }
+                            <Link to={`/articles/${art._id}`} className="font-weight-bold out-none" style={styles.footerColor}> &nbsp; { this.txt.readmore }</Link>
                           </small>
                         </div>
                       </div>

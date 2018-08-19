@@ -8,12 +8,12 @@ class Bio extends PureComponent {
     return (
       <div className="row justify-content-center border-top">
         <div className="col-12 col-md-10">
-          <div className="row">
+          <div className="row justify-content-center">
             <div className="col-12 col-lg-6 d-flex align-items-start justify-content-center">
-              <div className="d-flex flex-column justify-content-center p-2 p-md-4">
+              <div className="d-flex flex-column justify-content-center p-2 pb-0 pb-md-4 p-md-4">
                 <span className="doctors-name-2 font-39 my-1 my-md-2">PhD Dr. Fərman Həsənov</span>
                 <span className="doctors-prof-2 font-28 my-1 my-md-3">{ txt.doctorProf }</span>
-                <div className="doctors-mini-article my-1 my-md-3">
+                <div className="doctors-mini-article my-0 my-md-3">
                   <p className="font-16 text-justify">
                     Çoxları düşünür ki, Lorem Ipsum latıncadan təsadüfü seçilmiş sözcüklərdən ibarətdir, amma bu belə deyil.
                     Onun bizim eramızdan qabaq 45-ci il tarixinə – klassik Latın ədəbiyyatına qədər uzanan 2000 illik bir
@@ -30,8 +30,8 @@ class Bio extends PureComponent {
                 </div>
               </div>
             </div>
-            <div className="col-6 d-lg-flex align-items-center justify-content-center">
-              <div className="d-flex flex-column justify-content-center p-2 p-md-4">
+            <div className="col-12 col-sm-8 col-lg-6 d-lg-flex align-items-center justify-content-center">
+              <div className="p-2 p-md-3 mb-5 mb-md-3">
                 <img src={require('../../lib/images/article3.jpg')} alt="biophoto" className="img-fluid" />
               </div>
             </div>

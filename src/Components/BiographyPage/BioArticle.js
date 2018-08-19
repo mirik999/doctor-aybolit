@@ -9,7 +9,7 @@ class BlueRow extends PureComponent {
           <img src={require('../../lib/images/urolog.png')} alt="doctors-photo" className="img-fluid" />
         </div>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center">
-          <div className="doctors-mini-article my-1 my-md-3">
+          <div className="doctors-mini-article my-2 my-md-3">
             <p className="font-16 text-justify">
               Çoxları düşünür ki, Lorem Ipsum latıncadan təsadüfü seçilmiş sözcüklərdən ibarətdir, amma bu belə deyil.
               Onun bizim eramızdan qabaq 45-ci il tarixinə – klassik Latın ədəbiyyatına qədər uzanan 2000 illik bir
@@ -24,7 +24,7 @@ class BlueRow extends PureComponent {
               1.10.32 və 1.10.33-cü bölmələri 1914-cü ildə H. Rackham tərəfindən ingiliscəyə tərcümə olunmuşdur.
             </p>
             <div className="d-flex justify-content-end">
-              <div className="col-4 col-sm-3">
+              <div className="col-4 col-sm-3 mb-3 mb-md-0">
                 <img src={require('../../lib/images/signature.svg')} alt="Signature" className="img-fluid doctors-signature" />
               </div>
             </div>

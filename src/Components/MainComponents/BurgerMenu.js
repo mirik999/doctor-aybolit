@@ -4,10 +4,18 @@ import { slide as Menu } from 'react-burger-menu'
 
 
 class BurgerMenu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false
+    };
+  }
+
   render() {
     return (
         <div className="col-12 d-block d-lg-none px-0">
-          <Menu styles={styles} right>
+          <Menu styles={styles} right isOpen={this.state.isOpen}>
             <div className="d-flex flex-column justify-content-center align-items-center px-0">
               <img src={require('../../lib/images/Logo/Logo-footer.svg')} alt="white-logo" className="img-fluid mb-4" />
               <NavLink exact to="/" className="burger-nav-links" activeClassName="active-link-burger">ƏSAS SƏHİFƏ</NavLink>
@@ -25,7 +33,7 @@ class BurgerMenu extends Component {
 
 const styles = {
   bmBurgerButton: {
-    position: 'fixed',
+    position: 'absolute',
     width: '36px',
     height: '30px',
     right: '36px',
