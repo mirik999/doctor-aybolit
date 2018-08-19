@@ -30,7 +30,7 @@ class Bio extends PureComponent {
                 </div>
               </div>
             </div>
-            <div className="d-none col-lg-6 d-lg-flex align-items-center justify-content-center">
+            <div className="col-6 d-lg-flex align-items-center justify-content-center">
               <div className="d-flex flex-column justify-content-center p-2 p-md-4">
                 <img src={require('../../lib/images/article3.jpg')} alt="biophoto" className="img-fluid" />
               </div>

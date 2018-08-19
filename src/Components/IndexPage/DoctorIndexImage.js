@@ -1,10 +1,15 @@
 import React, {PureComponent} from 'react';
 import ProgressiveImage from 'react-progressive-image';
+//user components
+import IronImage from '../MainComponents/IronImage';
 
 
 class DoctorIndexImage extends PureComponent {
   render() {
     const { txt } = this.props;
+
+    // const img = 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534601340/Doctor.jpg';
+    // const imgSmall = 'http://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_100,w_200/v1534601340/Doctor.jpg';
 
     return (
       <div className="row">

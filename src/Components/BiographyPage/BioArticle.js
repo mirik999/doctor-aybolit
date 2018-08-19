@@ -5,7 +5,7 @@ class BlueRow extends PureComponent {
   render() {
     return (
       <div className="row justify-content-center px-3 px-md-0 pt-2 pt-md-3 pt-xl-5">
-        <div className="d-none d-md-flex col-md-4 align-items-end justify-content-center">
+        <div className="d-flex col-md-4 align-items-end justify-content-center">
           <img src={require('../../lib/images/urolog.png')} alt="doctors-photo" className="img-fluid" />
         </div>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center">

@@ -203,7 +203,11 @@ class AdminGallery extends PureComponent {
                   return(
                     <tr key={idx}>
                       <td><img id="articleImages" src={photo.src} className="admin-gl-mini-images" /></td>
-                      <td><small>{ photo.category }</small></td>
+                        <td><small>{ photo.category === 'procedure' ? 'Emeliyyat' :
+                          ( photo.category === 'collective' ? 'Kollektiv' :
+                            ( photo.category === 'drugs' ? 'Dermanlar' : '' )
+                          ) }
+                        </small></td>
                       <td><small>{ photo.caption }</small></td>
                       <td><button type="button" onClick={() => this.onDelete(photo._id)} className="admin-photo-del-btn">Sil</button></td>
                     </tr>

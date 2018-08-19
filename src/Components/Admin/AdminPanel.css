@@ -15,6 +15,10 @@
     background-size: cover;
 }
 
+.admin-enter-form {
+    margin-top: 220px;
+}
+
 .admin-content {
     background-color: #DDDDDD;
 }

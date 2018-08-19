@@ -35,7 +35,7 @@ class AdminPanel extends PureComponent {
     const { data } = this.state;
 
     return (
-      <div className="col-12" style={{ backgroundColor: '#E5E5E5' }}>
+      <div className="col-12" style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
         <div className="admin-header row justify-content-center align-items-center">
           <span className="admin-enter-header-text">İdarəetmə paneli</span>
         </div>
