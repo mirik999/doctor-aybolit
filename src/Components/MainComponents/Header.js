@@ -29,7 +29,7 @@ class Header extends Component {
 			<Wrapper>
 				<div className="row justify-content-center border-bottom" style={styles.headerInfoBg}>
           <BurgerMenu />
-					<div className="col-9 col-md-7 text-left font-16 py-2 px-0 px-sm-2" style={styles.headerInfo}>
+					<div className="col-9 col-md-7 text-left font-16 py-2 px-0 px-sm-2 pl-2 pl-md-0" style={styles.headerInfo}>
             <span className="ml-2 ml-md-0 mr-1 mr-sm-2"><Fa icon="phone" /></span>
             <a href="tel:994503184345" className="text-color">+994 50 3184345</a>
             <span className="ml-2 ml-md-5 mr-1 mr-sm-2"><Fa icon="envelope-o" /></span>
@@ -41,7 +41,7 @@ class Header extends Component {
 							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="twitter" /></a>
 							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="youtube" /></a>
 						</div>
-						<div className="header-lang d-flex align-items-center font-16 ml-1" style={styles.headerInfo}>
+						<div className="header-lang d-flex align-items-center font-16 ml-1 mr-3 mr-md-0" style={styles.headerInfo}>
 							<span className="mr-2 cursor-pointer" onClick={() => { this.props.setlocale("az") }}>AZ</span>
 							<span className="mr-2 cursor-pointer" onClick={() => { this.props.setlocale("en") }}>EN</span>
 							<span className="cursor-pointer" onClick={() => { this.props.setlocale("ru") }}>RU</span>

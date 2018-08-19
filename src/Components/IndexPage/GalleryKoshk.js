@@ -4,6 +4,7 @@ import OwlCarousel from 'react-owl-carousel';
 import { Fa } from 'mdbreact';
 import _ from 'lodash';
 import Lightbox from 'react-images';
+import ImageZoom from 'react-medium-image-zoom'
 //api requests
 import { galleryData, articlesData } from '../../data';
 import api from '../../api';
@@ -88,7 +89,7 @@ class GalleryKoshk extends Component {
   }
 
   openLightbox = (num) => {
-    this.setState({ isOpen: true, currentImage: num - 1})
+    this.setState({ isOpen: true, currentImage: num})
   };
 
   gotoPrevLightboxImage = () => {
@@ -127,46 +128,46 @@ class GalleryKoshk extends Component {
           >
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[0].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[0]._id)}
+                   onClick={() => this.openLightbox(gallery[0]._id)}
               />
               <img src={gallery[1].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[1]._id)}
+                   onClick={() => this.openLightbox(gallery[1]._id)}
               />
               <img src={gallery[2].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[2]._id)}
+                   onClick={() => this.openLightbox(gallery[2]._id)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[3].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[3]._id)}
+                   onClick={() => this.openLightbox(gallery[3]._id)}
               />
               <img src={gallery[4].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[4]._id)}
+                   onClick={() => this.openLightbox(gallery[4]._id)}
               />
               <img src={gallery[5].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[5]._id)}
+                   onClick={() => this.openLightbox(gallery[5]._id)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[6].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[6]._id)}
+                   onClick={() => this.openLightbox(gallery[6]._id)}
               />
               <img src={gallery[7].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[7]._id)}
+                   onClick={() => this.openLightbox(gallery[7]._id)}
               />
               <img src={gallery[8].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[8]._id)}
+                   onClick={() => this.openLightbox(gallery[8]._id)}
               />
             </div>
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[9].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[9]._id)}
+                   onClick={() => this.openLightbox(gallery[9]._id)}
               />
               <img src={gallery[10].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[10]._id)}
+                   onClick={() => this.openLightbox(gallery[10]._id)}
               />
               <img src={gallery[11].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
-                   //onClick={() => this.openLightbox(gallery[11]._id)}
+                   onClick={() => this.openLightbox(gallery[11]._id)}
               />
             </div>
           </OwlCarousel>
@@ -202,7 +203,18 @@ class GalleryKoshk extends Component {
                         <small className="text-secondary">{ qt.bookPage }</small>
                       </div>
                       <div className="koshk-book mt-2 mt-md-3">
-                        <img src={qt.book === 'book1' ? bookImg.book1 : bookImg.book2} alt="koshk-book" className="img-fluid koshk-book" />
+                        <ImageZoom
+                          image={{
+                            src: qt.src ,
+                            alt: 'kitab',
+                            className: 'img-fluid koshk-book',
+                            style: { cursor: 'pointer' }
+                          }}
+                          zoomImage={{
+                            src: qt.src,
+                            alt: 'Kitab'
+                          }}
+                        />
                       </div>
                     </div>
                   </div>

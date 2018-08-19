@@ -26,6 +26,7 @@
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.19",
     "react-intl": "^2.4.0",
+    "react-medium-image-zoom": "^3.0.13",
     "react-owl-carousel": "2.2.0",
     "react-progressive-image": "^0.3.0",
     "react-redux": "^5.0.7",

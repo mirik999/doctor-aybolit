@@ -12,6 +12,11 @@ const options = [
   { value: 'book2', label: 'BİR ÖMRÜN NƏĞMƏSİ' },
 ];
 
+const bookImage = {
+  imageOne: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504855/book1.png',
+  imageTwo: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504861/book2.png'
+}
+
 
 class AdminQuotes extends PureComponent {
   constructor(props) {
@@ -51,7 +56,11 @@ class AdminQuotes extends PureComponent {
   };
 
   onSelect = (e) => {
-    this.setState({ ...this.state, data: { ...this.state.data, book: e.value } })
+    this.setState({ ...this.state, data: { 
+      ...this.state.data, 
+      book: e.value, 
+      bookImg:  e.value === 'book1' ? bookImage.imageOne : bookImage.imageTwo
+    } })
   };
 
   onClick = async () => {
