@@ -18,6 +18,8 @@ class BiographyPage extends PureComponent {
 
     this.txt = {
       doctorProf: <FormattedMessage id="main.doctor-prof" />,
+      bioFHt: <FormattedMessage id="bioFH-t" />,
+      bioFHb: <FormattedMessage id="bioFH-b" />,
     }
   }
 

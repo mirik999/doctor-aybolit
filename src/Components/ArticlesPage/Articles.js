@@ -41,21 +41,6 @@ class Articles extends PureComponent {
     const indexOfFirstTodo = indexOfLastTodo - articlesPerPage;
     const currentArticles = articles.slice(indexOfFirstTodo, indexOfLastTodo);
 
-    const renderArticles = currentArticles.map((art, idx) =>
-      <div className="article-card-wrap d-flex flex-column align-items-center justify-content-center m-3" key={idx}>
-        <img src={art.artThumbnail} alt="article2" className="img-fluid article-img" />
-        <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-          <div className="my-2 my-md-3 text-left w-100 art-header">
-            <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 45 }) }</Link>
-          </div>
-          <small className="my-2 text-color text-justify art-mini-desc">
-            {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
-          </small>
-          <Link to={`/articles/${art._id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{txt.readmore}</Link>
-        </div>
-      </div>
-    );
-
     // Logic for displaying page numbers
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(articles.length / articlesPerPage); i++) {
@@ -81,8 +66,23 @@ class Articles extends PureComponent {
     return (
       <div className="row justify-content-center border-top">
         <div className="col-12 col-md-10 mt-4">
-          <div className="row justify-content-center align-items-center">
-            { renderArticles }
+          <div className="row d-flex justify-content-center h-100">
+            { 
+              currentArticles.map((art, idx) =>
+                <div className="articles-card-wrap d-flex flex-column align-items-center justify-content-between mx-4 my-3 h-100" key={idx}>
+                  <img src={art.artThumbnail} alt="article2" className="img-fluid art-card-img" />
+                  <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start h-100">
+                    <div className="my-2 my-md-3 text-left w-100 art-header text-center">
+                      <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 35 }) }</Link>
+                    </div>
+                    <small className="my-2 text-color text-justify art-mini-desc">
+                      {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
+                    </small>
+                    <Link to={`/articles/${art._id}`} className="border mx-auto mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{ txt.readmore }</Link>
+                  </div>
+                </div>
+              )
+            }
           </div>
           <div className="row justify-content-center my-2 my-md-4">
             <ul id="page-numbers">

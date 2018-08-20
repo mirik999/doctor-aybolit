@@ -33,7 +33,8 @@ class Footer extends PureComponent {
       mediaLink: <FormattedMessage id="main.media-link" />,
       galleryLink: <FormattedMessage id="main.gallery-link" />,
       artLink: <FormattedMessage id="main.art-link" />,
-      contactLink: <FormattedMessage id="main.contact-link" />
+      contactLink: <FormattedMessage id="main.contact-link" />,
+      aboutFH: <FormattedMessage id="footerFH" />,
     }
   }
 
@@ -63,14 +64,12 @@ class Footer extends PureComponent {
               <div className="col-10 col-sm-8 col-xl-3 d-flex flex-column align-items-center">
                 <img src={require('../../lib/images/Logo/Logo-footer.svg')} alt="white-logo" className="img-fluid my-2 my-md-3" />
                 <small className="text-justify my-2 my-md-3">
-                  Lorem İpsum – dizayn nəşrlərində istifadə olunan düzgün olmayan mətndir. Dəqiq quruluşa malik olmayan
-                  bu mətn latincada hələ XVI əsrdə öz qəlib formasını almışdır. Həmin zamanlarda naməlum bir çapçı Lorem
-                  Ipsum`dan istifadə edərək müxtəlif ölçü və formalarda şriftlər kolleksiyası yaratdı və öz nümunələrini çap elədi.
+                  { this.txt.aboutFH }
                 </small>
                 <div className="social-links w-100">
-                  <a href="#" className="mr-2 cursor-pointer font-16" style={styles.footerColor}><Fa icon="facebook-f" /></a>
-                  <a href="#" className="mr-2 cursor-pointer font-16" style={styles.footerColor}><Fa icon="twitter" /></a>
-                  <a href="#" className="mr-2 cursor-pointer font-16" style={styles.footerColor}><Fa icon="youtube" /></a>
+                  <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="facebook-f" /></a>
+                  <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="twitter" /></a>
+                  <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="youtube" /></a>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-xl-2 d-none d-md-flex flex-column align-items-center">
@@ -89,15 +88,15 @@ class Footer extends PureComponent {
                 {
                   articles.map((art, idx) => {
                     return(
-                      <div className="footer-art-wrap d-flex w-100 my-2" key={idx}>
+                      <div className="footer-art-wrap d-flex align-items-center w-100 my-2" key={idx}>
                         <img src={art.artThumbnail} alt="" className="img-fluid footer-art-img" />
                         <div className="d-flex flex-column w-100 ml-2">
-                          <span className="footer-art-name font-weight-bold" style={{ color: '#00D2D3' }}>
+                          <small className="footer-art-name font-weight-bold" style={{ color: '#00D2D3' }}>
                             <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 30 }) }</Link>
-                          </span>
+                          </small>
                           <small className="font-12">
                             { _.truncate(art.artText, { 'length': 80 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ') }
-                            <Link to={`/articles/${art._id}`} className="font-weight-bold out-none" style={styles.footerColor}> &nbsp; { this.txt.readmore }</Link>
+                            <Link to={`/articles/${art._id}`} className="font-weight-bold out-none" style={styles.footerColor}> { this.txt.readmore }</Link>
                           </small>
                         </div>
                       </div>

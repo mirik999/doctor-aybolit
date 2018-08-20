@@ -245,15 +245,15 @@ class GalleryKoshk extends Component {
             {
               articles.map((art, idx) =>
               <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3 h-100" key={idx}>
-                <img src={art.artThumbnail} alt="article2" className="img-fluid " />
-                <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                  <div className="my-2 my-md-3 text-left w-100 art-header">
+                <img src={art.artThumbnail} alt="article2" className="img-fluid art-card-img" />
+                <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start h-100">
+                  <div className="my-2 my-md-3 text-left w-100 art-header text-center">
                     <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 35 }) }</Link>
                   </div>
                   <small className="my-2 text-color text-justify art-mini-desc">
                     {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
                   </small>
-                  <Link to={`/articles/${art._id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{ txt.readmore }</Link>
+                  <Link to={`/articles/${art._id}`} className="border mx-auto mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{ txt.readmore }</Link>
                 </div>
               </div>
               )
