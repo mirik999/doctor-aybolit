@@ -54,8 +54,6 @@ class Footer extends PureComponent {
   render() {
     const { articles } = this.state;
 
-    console.log(articles)
-
     return (
       <Wrapper>
         <div className="row justify-content-center" style={styles.bg1}>
@@ -72,19 +70,21 @@ class Footer extends PureComponent {
                   <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="youtube" /></a>
                 </div>
               </div>
-              <div className="col-12 col-md-4 col-xl-2 d-none d-md-flex flex-column align-items-center">
-                <span className="footer-heading font-28 font-weight-bold my-2 my-md-3 pb-3">{ this.txt.shortlinks }</span>
-                <ul className="px-1">
-                  <li><Link to="/" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.mainLink }</Link></li>
-                  <li><Link to="/biography" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.bioLink }</Link></li>
-                  <li><Link to="/media" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.mediaLink }</Link></li>
-                  <li><Link to="/gallery" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.galleryLink }</Link></li>
-                  <li><Link to="/articles" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.artLink }</Link></li>
-                  <li><Link to="/contact" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.contactLink }</Link></li>
-                </ul>
+              <div className="col-12 col-md-4 col-xl-2 d-none d-md-flex flex-column align-items-center pl-4">
+                <div className="my-2 my-md-3 pb-3 w-100"><span className="footer-heading font-28 font-weight-bold pb-3">{ this.txt.shortlinks }</span></div>
+                <d className="w-100">
+                  <ul className="pl-3">
+                    <li><Link to="/" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.mainLink }</Link></li>
+                    <li><Link to="/biography" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.bioLink }</Link></li>
+                    <li><Link to="/media" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.mediaLink }</Link></li>
+                    <li><Link to="/gallery" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.galleryLink }</Link></li>
+                    <li><Link to="/articles" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.artLink }</Link></li>
+                    <li><Link to="/contact" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.contactLink }</Link></li>
+                  </ul>
+                </d>
               </div>
               <div className="col-12 col-sm-6 col-xl-4 d-flex flex-column align-items-center mt-2 mt-md-4 mt-xl-0">
-                <span className="footer-heading font-28 font-weight-bold my-2 my-md-3 pb-3">{ this.txt.lastarts }</span>
+                <div className="my-2 my-md-3 pb-3 w-100"><span className="footer-heading font-28 font-weight-bold pb-3">{ this.txt.lastarts }</span></div>
                 {
                   articles.map((art, idx) => {
                     return(
@@ -105,7 +105,7 @@ class Footer extends PureComponent {
                 }
               </div>
               <div className="col-12 col-sm-6 col-xl-3 d-flex flex-column align-items-center mt-2 mt-md-4 mt-xl-0">
-                <span className="footer-heading font-28 font-weight-bold my-2 my-md-3 pb-3 text-center">{ this.txt.contactinfo }</span>
+                <div className="my-2 my-md-3 pb-3 w-100"><span className="footer-heading font-28 font-weight-bold pb-3">{ this.txt.contactinfo }</span></div>
                 <div className="d-flex flex-column w-100">
                   <div className="add-phone d-flex align-items-center add-info-wrap pb-2">
                     <span className="footer-add-icon mr-2 mr-xl-3"><Fa icon="phone" /></span>

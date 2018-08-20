@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Fa } from 'mdbreact';
+import classNames from 'classnames';
 //user components
 import Wrapper from './Wrapper.js';
 import BurgerMenu from './BurgerMenu.js';
@@ -25,10 +26,12 @@ class Header extends Component {
   }
 
 	render() {
+    const { lang } = this.props;
+
 		return (
 			<Wrapper>
 				<div className="row justify-content-center border-bottom" style={styles.headerInfoBg}>
-          <BurgerMenu />
+          <BurgerMenu txt={this.txt} />
 					<div className="col-9 col-md-7 text-left font-16 py-2 px-0 px-sm-2 pl-2 pl-md-0" style={styles.headerInfo}>
             <span className="ml-2 ml-md-0 mr-1 mr-sm-2"><Fa icon="phone" /></span>
             <a href="tel:994503184345" className="text-color">+994 50 3184345</a>
@@ -37,14 +40,23 @@ class Header extends Component {
 					</div>
 					<div className="col-3 col-md-3 d-flex justify-content-end py-2 px-0 px-sm-2">
 						<div className="header-social d-none d-sm-flex align-items-center mr-2 pr-1 border-right">
-							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="facebook-f" /></a>
-							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="twitter" /></a>
-							<a href="#" className="mr-2 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="youtube" /></a>
+							<a href="#" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="facebook-f" /></a>
+							<a href="#" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="twitter" /></a>
+							<a href="#" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="youtube" /></a>
 						</div>
 						<div className="header-lang d-flex align-items-center font-16 ml-1 mr-3 mr-md-0" style={styles.headerInfo}>
-							<span className="mr-2 cursor-pointer" onClick={() => { this.props.setlocale("az") }}>AZ</span>
-							<span className="mr-2 cursor-pointer" onClick={() => { this.props.setlocale("en") }}>EN</span>
-							<span className="cursor-pointer" onClick={() => { this.props.setlocale("ru") }}>RU</span>
+							<span className={classNames({
+                "mr-3 cursor-pointer": true,
+                "text-color-blue font-weight-bold": lang === "az"
+              })} onClick={() => { this.props.setlocale("az") }}>AZ</span>
+							<span className={classNames({
+                "mr-3 cursor-pointer": true,
+                "text-color-blue font-weight-bold": lang === "en"
+              })} onClick={() => { this.props.setlocale("en") }}>EN</span>
+							<span className={classNames({
+                "cursor-pointer": true,
+                "text-color-blue font-weight-bold": lang === "ru"
+              })} onClick={() => { this.props.setlocale("ru") }}>RU</span>
 						</div>
 					</div>
 				</div>

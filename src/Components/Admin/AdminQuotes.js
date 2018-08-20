@@ -15,7 +15,7 @@ const options = [
 const bookImage = {
   imageOne: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504855/book1.png',
   imageTwo: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504861/book2.png'
-}
+};
 
 
 class AdminQuotes extends PureComponent {

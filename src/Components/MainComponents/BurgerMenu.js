@@ -13,17 +13,19 @@ class BurgerMenu extends Component {
   }
 
   render() {
+    const { txt } = this.props;
+
     return (
         <div className="col-12 d-block d-lg-none px-0">
           <Menu styles={styles} right isOpen={this.state.isOpen}>
             <div className="d-flex flex-column justify-content-center align-items-center px-0">
               <img src={require('../../lib/images/Logo/Logo-footer.svg')} alt="white-logo" className="img-fluid mb-4" />
-              <NavLink exact to="/" className="burger-nav-links" activeClassName="active-link-burger">ƏSAS SƏHİFƏ</NavLink>
-              <NavLink exact to="/biography" className="burger-nav-links" activeClassName="active-link-burger">BİOQRAFİYA</NavLink>
-              <NavLink exact to="/media" className="burger-nav-links" activeClassName="active-link-burger">MEDİA</NavLink>
-              <NavLink exact to="/gallery" className="burger-nav-links" activeClassName="active-link-burger">QALEREYA</NavLink>
-              <NavLink exact to="/articles" className="burger-nav-links" activeClassName="active-link-burger">MƏQALƏLƏR</NavLink>
-              <NavLink exact to="/contact" className="burger-nav-links" activeClassName="active-link-burger">ƏLAQƏ</NavLink>
+              <NavLink exact to="/" className="burger-nav-links" activeClassName="active-link-burger">{ txt.mainLink }</NavLink>
+              <NavLink exact to="/biography" className="burger-nav-links" activeClassName="active-link-burger">{ txt.bioLink }</NavLink>
+              <NavLink exact to="/media" className="burger-nav-links" activeClassName="active-link-burger">{ txt.mediaLink }</NavLink>
+              <NavLink exact to="/gallery" className="burger-nav-links" activeClassName="active-link-burger">{ txt.galleryLink }</NavLink>
+              <NavLink exact to="/articles" className="burger-nav-links" activeClassName="active-link-burger">{ txt.artLink }</NavLink>
+              <NavLink exact to="/contact" className="burger-nav-links" activeClassName="active-link-burger">{ txt.contactLink }</NavLink>
             </div>
           </Menu>
         </div>

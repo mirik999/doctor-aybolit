@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import { injectIntl, intlShape } from 'react-intl';
 import { Fa } from 'mdbreact';
+import { ToastContainer, toast } from 'react-toastify';
 //api requests
 import api from '../../api';
 
@@ -37,7 +38,8 @@ class Contact extends Component {
         theme: '',
         text: ''
       },
-      sentEmail: false
+      sentEmail: false,
+      btnDisable: true
     };
 
     this.onChange = this.onChange.bind(this);
@@ -45,6 +47,12 @@ class Contact extends Component {
   }
 
   onChange = (e) => {
+
+    const { data } = this.state;
+    if (data.fio !== '' && data.phone !== '' && data.email !== '' && data.theme !== '' && data.text !== '') {
+      this.setState({ btnDisable: false })
+    }
+
     this.setState({ data: { ...this.state.data, [e.target.name]: e.target.value } })
   };
 
@@ -54,7 +62,7 @@ class Contact extends Component {
   };
 
   render() {
-    const { data } = this.state;
+    const { data, btnDisable } = this.state;
     const { txt } = this.props;
 
     const placeholder = {
@@ -94,8 +102,8 @@ class Contact extends Component {
                      onChange={this.onChange} placeholder={ placeholder.fio } maxLength="50"
               />
               <div className="d-flex w-100 justify-content-center">
-                <input type="number" className="contact-inp-mini my-2 mr-2" name="phone" value={data.phone}
-                       onChange={this.onChange} placeholder={ placeholder.phone } maxLength="50"
+                <input type="tel" className="contact-inp-mini my-2 mr-2" name="phone" value={data.phone}
+                       onChange={this.onChange} placeholder={ placeholder.phone } maxLength="50" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
                 />
                 <input type="email" className="contact-inp-mini my-2 ml-2" name="email" value={data.email}
                        onChange={this.onChange} placeholder={ placeholder.email } maxLength="50"
@@ -107,11 +115,12 @@ class Contact extends Component {
               <textarea name="contact-message" className="contact-txtarea my-2" name="text" value={data.text}
                         onChange={this.onChange} placeholder={ placeholder.msg } maxLength="250"></textarea>
               <div className="d-flex w-100 justify-content-end my-2">
-                <button type="button" className="contact-btn" onClick={this.onClick}>{ txt.sendmsg }</button>
+                <button type="button" className="contact-btn" onClick={this.onClick} disabled={btnDisable}>{ txt.sendmsg }</button>
               </div>
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     );
   }

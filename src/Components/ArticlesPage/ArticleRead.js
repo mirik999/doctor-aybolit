@@ -16,11 +16,11 @@ class ArticleRead extends PureComponent {
   async componentDidMount() {
     const artID = await this.props.match.params.id;
     const articles = await api.admin.getArticles();
-    const article = articles.filter(art => art._id == artID).reduce((result, item, index) => {
+    const article = await articles.filter(art => art._id == artID).reduce((result, item, index) => {
       result[index] = item;
       return result[0];
     }, {});
-    this.setState({ article });
+    await this.setState({ article });
     window.scrollTo({
       'behavior': 'smooth',
       'left': 0,
