@@ -80,18 +80,18 @@ class VideoPlay extends PureComponent {
                     current.map((vd, idx) => {
                       return(
                         <div className="col-12 col-sm-6 col-lg-4 col-xl-3 my-3" key={idx}>
-                          <div className="video-card-wrap d-flex flex-column align-items-center my-3">
-                            <img src={`https://img.youtube.com/vi/${vd.videoID}/0.jpg`} alt="article1" className="img-fluid art-img" />
+                          <div className="video-card-wrap d-flex flex-column align-items-center my-3 h-100">
+                            <img src={`https://img.youtube.com/vi/${vd.videoID}/0.jpg`} alt="article1" className="img-fluid video-img" />
                             <div className="art-info-wrap p-2 d-flex flex-column justify-content-between align-items-start h-100">
                               <div className="my-1 text-left w-100 art-header">
-                          <span className="font-18">
-                            {_.truncate(vd.videoTitle, { 'length': 45 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
-                          </span>
+                                <span className="font-18">
+                                  {_.truncate(vd.videoTitle, { 'length': 45 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
+                                </span>
                               </div>
                               <small className="my-1 text-color text-justify video-mini-desc">
                                 {_.truncate(vd.videoDesc, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
                               </small>
-                              <div className="d-flex align-items-end justify-content-center w-100 h-100">
+                              <div className="d-flex align-items-end justify-content-center w-100">
                                 <button type="button" className="video-watch-btn border p-1 my-1 text-color cursor-pointer font-weight-bold"
                                         onClick={() => this.watchVideo(vd)}
                                 >{ txt.watchvideo }</button>

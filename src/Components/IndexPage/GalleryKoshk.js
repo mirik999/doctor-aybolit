@@ -56,9 +56,13 @@ const owlResponsiveFourth = {
     items: 2,
     nav:false,
   },
-  // breakpoint from 768 up
   1100 : {
     items: 3,
+    nav:false,
+  },
+  // breakpoint from 768 up
+  1500 : {
+    items: 4,
     nav:false,
   }
 };
@@ -229,10 +233,10 @@ class GalleryKoshk extends Component {
             <span className="font-32 text-color m-2 m-md-3">{ txt.articles }</span>
           </div>
           <OwlCarousel
-            className="owl-fifth owl-theme pt-2 pb-2 d-flex justify-content-center position-relative"
-            controlsClass="position-relative"
+            className="owl-fifth owl-theme p-4"
+            controlsClass=""
             responsive={owlResponsiveFourth}
-            navContainerClass='doctors-articles'
+            navContainerClass='d-flex'
             navClass={['owl-m-prev', 'owl-m-next']}
             navText={[]}
             dots={false}
@@ -240,18 +244,18 @@ class GalleryKoshk extends Component {
           >
             {
               articles.map((art, idx) =>
-                <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3" key={idx}>
-                  <img src={art.artThumbnail} alt="article2" className="img-fluid art-img" />
-                  <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
-                    <div className="my-2 my-md-3 text-left w-100 art-header">
-                      <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 45 }) }</Link>
-                    </div>
-                    <small className="my-2 text-color text-justify art-mini-desc">
-                      {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
-                    </small>
-                    <Link to={`/articles/${art._id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{ txt.readmore }</Link>
+              <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3 h-100" key={idx}>
+                <img src={art.artThumbnail} alt="article2" className="img-fluid " />
+                <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start">
+                  <div className="my-2 my-md-3 text-left w-100 art-header">
+                    <Link to={`/articles/${art._id}`} className="text-color-blue">{ _.truncate(art.artTitle, { 'length': 35 }) }</Link>
                   </div>
+                  <small className="my-2 text-color text-justify art-mini-desc">
+                    {_.truncate(art.artText, { 'length': 120 }).replace(/<\/?[^>]+>/g,'').replace('&nbsp;', ' ')}
+                  </small>
+                  <Link to={`/articles/${art._id}`} className="border my-2 mt-md-4 px-2 py-1 text-color cursor-pointer font-weight-bold">{ txt.readmore }</Link>
                 </div>
+              </div>
               )
             }
           </OwlCarousel>
@@ -271,3 +275,4 @@ class GalleryKoshk extends Component {
 
 
 export default GalleryKoshk;
+
