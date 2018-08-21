@@ -450,12 +450,14 @@
     }
 }
 
-@media screen and (max-width: 1401px) {
+@media screen and (max-width: 1401px) and (min-width: 1282px) {
     .header-logo {
         width: 300px;
-        bottom: 35px;
+        bottom: 45px !important;
     }
+}
 
+@media screen and (max-width: 1401px) {
     .doctors-sert {
         max-width: 236px;
         max-height: 184px;
