@@ -212,6 +212,7 @@ class Sertificats extends PureComponent {
             controlsClass="position-relative"
             responsive={owlResponsiveFirst}
             dots={false}
+            loop
           >
             {
               sertificats.map((sert, idx) => {

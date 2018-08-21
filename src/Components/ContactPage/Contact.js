@@ -3,6 +3,7 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import { injectIntl, intlShape } from 'react-intl';
 import { Fa } from 'mdbreact';
 import { ToastContainer, toast } from 'react-toastify';
+import validator from 'validator';
 //api requests
 import api from '../../api';
 
@@ -39,31 +40,56 @@ class Contact extends Component {
         text: ''
       },
       sentEmail: false,
-      btnDisable: true
+      btnDisable: true,
+      errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.validate = this.validate.bind(this);
   }
 
   onChange = (e) => {
-
-    const { data } = this.state;
-    if (data.fio !== '' && data.phone !== '' && data.email !== '' && data.theme !== '' && data.text !== '') {
-      this.setState({ btnDisable: false })
-    }
-
-    this.setState({ data: { ...this.state.data, [e.target.name]: e.target.value } })
+    this.setState({ ...this.state,  data: { ...this.state.data, [e.target.name]: e.target.value }, errors: {} })
   };
 
   onClick = async () => {
-    const mail = await api.admin.sendMail(this.state.data);
-    this.setState({ ...this.state, data: { fio: '', phone: '', email: '', theme: '', text: '' }, sentEmail: true });
+    const errors = this.validate(this.state.data);
+    this.setState({ errors });
+    if (Object.keys(errors).length === 0) {
+      try {
+        const mail = await api.admin.sendMail(this.state.data);
+        this.setState({ ...this.state, data: { fio: '', phone: '', email: '', theme: '', text: '' }, sentEmail: true, errors: {} });
+      } catch(err) {
+        this.setState({ errors: err.response.data.errors })
+      }
+    }
+  };
+
+  validate = (data) => {
+    const errors = {};
+    if (!validator.isLength(data.fio, { min: 3, max: 50 } )) {
+      errors.fio = 'Name is too short';
+    }
+    if (!validator.isLength(data.theme, { min: 5, max: 50 } )) {
+      errors.theme = 'Theme is too short';
+    }
+    if (!validator.isLength(data.text, { min: 5, max: 150 })) {
+      errors.text = 'Text is too short';
+    }
+    if (!validator.isEmail(data.email)) {
+      errors.email = 'email is not valid';
+    }
+    if (!validator.isNumeric(data.phone)) {
+      errors.phone = 'phone is not valid';
+    }
+    return errors;
   };
 
   render() {
-    const { data, btnDisable } = this.state;
+    const { data, btnDisable, errors } = this.state;
     const { txt } = this.props;
+
 
     const placeholder = {
       fio: this.props.intl.formatMessage({id: 'contact.fio'}),
@@ -93,7 +119,7 @@ class Contact extends Component {
                   <div className="my-4"></div>
                   <div className="d-flex align-items-center">
                     <span className="contact-icon font-32 text-color-blue mx-2"><Fa icon="phone" /></span>
-                    <span className="font-16">+994 12 7654321 <br /> +994 55 7654321</span>
+                    <span className="font-16">+994 12 7654321 <br /> +994 50 3184345</span>
                   </div>
                 </div>
             </div>
@@ -115,7 +141,7 @@ class Contact extends Component {
               <textarea name="contact-message" className="contact-txtarea my-2" name="text" value={data.text}
                         onChange={this.onChange} placeholder={ placeholder.msg } maxLength="250"></textarea>
               <div className="d-flex w-100 justify-content-end my-2">
-                <button type="button" className="contact-btn" onClick={this.onClick} disabled={btnDisable}>{ txt.sendmsg }</button>
+                <button type="button" className="contact-btn" onClick={this.onClick}>{ txt.sendmsg }</button>
               </div>
             </div>
           </div>

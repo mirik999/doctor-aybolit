@@ -40,9 +40,9 @@ class Header extends Component {
 					</div>
 					<div className="col-3 col-md-3 d-flex justify-content-end py-2 px-0 px-sm-2">
 						<div className="header-social d-none d-sm-flex align-items-center mr-2 pr-1 border-right">
-							<a href="#" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="facebook-f" /></a>
-							<a href="#" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="twitter" /></a>
-							<a href="#" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="youtube" /></a>
+							<a href="https://www.facebook.com/drfarmanhasanov" target="_blank" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="facebook-f" /></a>
+							<a href="https://twitter.com/drfarmanhasanov" target="_blank" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="twitter" /></a>
+							<a href="https://www.youtube.com/channel/UC3ttamdtGlr-F82Mc2lGiLQ" target="_blank" className="mr-3 cursor-pointer font-16" style={styles.headerInfo}><Fa icon="youtube" /></a>
 						</div>
 						<div className="header-lang d-flex align-items-center font-16 ml-1 mr-3 mr-md-0" style={styles.headerInfo}>
 							<span className={classNames({

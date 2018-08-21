@@ -65,9 +65,9 @@ class Footer extends PureComponent {
                   { this.txt.aboutFH }
                 </small>
                 <div className="social-links w-100">
-                  <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="facebook-f" /></a>
-                  <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="twitter" /></a>
-                  <a href="#" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="youtube" /></a>
+                  <a href="https://www.facebook.com/drfarmanhasanov" target="_blank" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="facebook-f" /></a>
+                  <a href="https://twitter.com/drfarmanhasanov" target="_blank" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="twitter" /></a>
+                  <a href="https://www.youtube.com/channel/UC3ttamdtGlr-F82Mc2lGiLQ" target="_blank" className="mr-3 cursor-pointer font-16" style={styles.footerColor}><Fa icon="youtube" /></a>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-xl-2 d-none d-md-flex flex-column align-items-center pl-4">

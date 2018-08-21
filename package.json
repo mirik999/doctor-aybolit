@@ -44,6 +44,7 @@
     "reselect": "^3.0.1",
     "sha1": "^1.1.1",
     "superagent": "^3.8.3",
+    "validator": "^10.6.0",
     "yandex-translate": "^2.1.1"
   },
   "scripts": {
