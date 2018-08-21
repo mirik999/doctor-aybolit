@@ -72,7 +72,7 @@ class Footer extends PureComponent {
               </div>
               <div className="col-12 col-md-4 col-xl-2 d-none d-md-flex flex-column align-items-center pl-4">
                 <div className="my-2 my-md-3 pb-3 w-100"><span className="footer-heading font-28 font-weight-bold pb-3">{ this.txt.shortlinks }</span></div>
-                <d className="w-100">
+                <div className="w-100">
                   <ul className="pl-3">
                     <li><Link to="/" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.mainLink }</Link></li>
                     <li><Link to="/biography" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.bioLink }</Link></li>
@@ -81,7 +81,7 @@ class Footer extends PureComponent {
                     <li><Link to="/articles" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.artLink }</Link></li>
                     <li><Link to="/contact" onClick={this.onScrollUp} className="mr-2 cursor-pointer font-16" style={styles.footerColor}>{ this.txt.contactLink }</Link></li>
                   </ul>
-                </d>
+                </div>
               </div>
               <div className="col-12 col-sm-6 col-xl-4 d-flex flex-column align-items-center mt-2 mt-md-4 mt-xl-0">
                 <div className="my-2 my-md-3 pb-3 w-100"><span className="footer-heading font-28 font-weight-bold pb-3">{ this.txt.lastarts }</span></div>
