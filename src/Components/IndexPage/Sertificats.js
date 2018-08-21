@@ -6,28 +6,24 @@ import Lightbox from 'react-images';
 
 const sert = [
   {
-    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503590/3.png',
-    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503590/3.png'
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503590/1.png',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503590/1.png'
   },
   {
-    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503588/6.jpg',
-    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503588/6.jpg'
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503588/2.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503588/2.jpg'
   },
   {
-    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503587/4.jpg',
-    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503587/4.jpg'
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503587/3.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503587/3.jpg'
   },
   {
-    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503575/1.jpg',
-    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503575/1.jpg'
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503575/4.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503575/4.jpg'
   },
   {
-    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503574/2.jpg',
-    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503574/2.jpg'
-  },
-  {
-    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503550/5.jpg',
-    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503550/5.jpg'
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503574/5.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503574/5.jpg'
   },
   {
     src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503550/6.jpg',
@@ -59,6 +55,10 @@ const sert = [
   },
   {
     src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503550/13.jpg',
+    srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503550/13.jpg'
+  },
+  {
+    src: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534503550/14.jpg',
     srcSmall: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/c_scale,h_50,w_50/v1534503550/14.jpg'
   },
   {
@@ -213,6 +213,7 @@ class Sertificats extends PureComponent {
             responsive={owlResponsiveFirst}
             dots={false}
             loop
+            autoplay={true}
           >
             {
               sertificats.map((sert, idx) => {
