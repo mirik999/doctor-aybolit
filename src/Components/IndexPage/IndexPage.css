@@ -301,7 +301,7 @@
 .owl-m-next {
     position: absolute;
     top: 210px;
-    right: 19px;
+    right: 18px;
     background-color: #00D2D3;
     width: 30px;
     height: 65px;
@@ -375,7 +375,11 @@
 
 .owl-fifth .owl-stage {
     display: flex !important;
-    padding-bottom: 25px;
+}
+
+.owl-first .owl-stage {
+    display: flex !important;
+    align-items: center;
 }
 
 .art-header {
