@@ -564,4 +564,7 @@
         min-width: 100%;
         height: 180px !important;
     }
+    .art-card-wrap  img {
+        min-height: 150px;
+    }
 }

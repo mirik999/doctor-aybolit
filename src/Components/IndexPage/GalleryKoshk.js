@@ -52,7 +52,7 @@ const owlResponsiveFourth = {
     nav:false,
   },
   // breakpoint from 480 up
-  660 : {
+  650 : {
     items: 2,
     nav:false,
   },
@@ -244,7 +244,7 @@ class GalleryKoshk extends Component {
           >
             {
               articles.map((art, idx) =>
-              <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 my-3 h-100" key={idx}>
+              <div className="art-card-wrap d-flex flex-column align-items-center justify-content-center mx-4 mb-5 mb-md-3 h-100" key={idx}>
                 <img src={art.artThumbnail} alt="article2" className="img-fluid art-card-img" />
                 <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start h-100">
                   <div className="my-2 my-md-3 text-left w-100 art-header text-center">
