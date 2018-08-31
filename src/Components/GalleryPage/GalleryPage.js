@@ -25,7 +25,7 @@ class GalleryPage extends PureComponent {
       collective: <FormattedMessage id="gallery.collective" />,
       procedure: <FormattedMessage id="gallery.procedure" />,
       drugs: <FormattedMessage id="gallery.drugs" />,
-      relax: <FormattedMessage id="gallery.relax" />,
+      family: <FormattedMessage id="gallery.family" />,
       morecontent: <FormattedMessage id="media.morecontent" />
     }
   }

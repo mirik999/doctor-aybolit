@@ -72,12 +72,12 @@ class GalleryGrid extends PureComponent {
                   "gallery-btns-active": galleryCategory === 'drugs',
                 })} onClick={() => this.onCategory('drugs')}>{ txt.drugs }</div>
               </div>
-              {/*<div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">*/}
-                {/*<div className={classNames({*/}
-                  {/*"gallery-btns": galleryCategory !== 'walk',*/}
-                  {/*"gallery-btns-active": galleryCategory === 'walk',*/}
-                {/*})} onClick={() => this.onCategory('walk')}>{ txt.relax }</div>*/}
-              {/*</div>*/}
+              <div className="gallery-btns-wrap p-2 my-2 my-md-0 text-center">
+                <div className={classNames({
+                  "gallery-btns": galleryCategory !== 'family',
+                  "gallery-btns-active": galleryCategory === 'family',
+                })} onClick={() => this.onCategory('family')}>{ txt.family }</div>
+              </div>
             </div>
           </div>
         </div>

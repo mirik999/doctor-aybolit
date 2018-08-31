@@ -7,7 +7,7 @@ import validator from 'validator';
 //api requests
 import api from '../../api';
 
-const mapState = { center: [40.391647, 49.832807], zoom: 15 };
+const mapState = { center: [40.392438, 49.834122], zoom: 16 };
 
 const MyPlacemark = () => (
   <YMaps>
@@ -15,7 +15,7 @@ const MyPlacemark = () => (
 
       <Placemark
         geometry={{
-          coordinates: [40.392447, 49.831927]
+          coordinates: [40.392438, 49.834122]
         }}
         properties={{
           hintContent: 'Собственный значок метки',
@@ -26,6 +26,15 @@ const MyPlacemark = () => (
     </Map>
   </YMaps>
 );
+
+// const AkifsMap = () => {
+//     ymaps.ready(init);
+
+//     return function init() {
+//         var myMap = new ymaps.Map('xerite', { center: [40.392438, 49.834122], zoom: 16 });
+//         myMap.balloon.open([40.41035, 49.95074], { contentBody: '<img src="/favicon.png" width="16px" height="" alt="image"> <b>Dr.Fərman Həsənov - Ağız və üz-çənə cərrahı</b><br/><div style="text-align: right;"><i class="fa fa-map-marker "></i> <b>Ünvan:</b> Bakı şəhəri, <br/>Səməd Vurğun küçəsi 155, ATU Tədris Cərrahiyyə Klinikası<br/></div><div style="background: #eee; border-radius: 10px; padding: 5px; text-align: center; margin-top: 5px;"><i class="fa fa-address-card"></i> <b>Əlaqə üçün:</b><br/><i class="fa fa-phone"></i> +994 50 318 4345<br/><i class="fa fa-phone"></i> +994 50 8805880<br/><i class="fa fa-envelope"></i> dr_farman59@mail.ru</div>' }, { closeButton: false }, );
+//     }
+// }
 
 class Contact extends Component {
   constructor(props) {
@@ -114,12 +123,12 @@ class Contact extends Component {
                   <div className="my-4"></div>
                   <div className="d-flex align-items-center">
                     <span className="contact-icon font-32 text-color-blue mx-2"><Fa icon="envelope" /></span>
-                    <span className="font-16">hekim@fermanhesenov.az</span>
+                    <span className="font-16">dr_farman59@mail.ru</span>
                   </div>
                   <div className="my-4"></div>
                   <div className="d-flex align-items-center">
                     <span className="contact-icon font-32 text-color-blue mx-2"><Fa icon="phone" /></span>
-                    <span className="font-16">+994 12 7654321 <br /> +994 50 3184345</span>
+                    <span className="font-16">+994 50 8805880</span>
                   </div>
                 </div>
             </div>

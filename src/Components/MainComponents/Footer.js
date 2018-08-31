@@ -110,7 +110,7 @@ class Footer extends PureComponent {
                   <div className="add-phone d-flex align-items-center add-info-wrap pb-2">
                     <span className="footer-add-icon mr-2 mr-xl-3"><Fa icon="phone" /></span>
                     <div className="add-nums d-flex flex-xl-column">
-                      <a href="tel:994127654321" className="footer-color mr-3 mr-xl-0"><small>+994 12 7654321</small></a>
+                      <a href="tel:994127654321" className="footer-color mr-3 mr-xl-0"><small>+994 50 8805880</small></a>
                       <a href="tel:994557654321" className="footer-color"><small>+994 55 7654321</small></a>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ class Footer extends PureComponent {
                     <span className="footer-add-icon mr-2 mr-xl-3"><Fa icon="envelope-o" /></span>
                     <div className="add-nums d-flex align-items-center justify-content-center">
                       <a href="mailto:info@fermanhesenov.az" className="footer-color">
-                        <small>info@fermanhesenov.az</small></a>
+                        <small>dr_farman59@mail.ru</small></a>
                     </div>
                   </div>
                 </div>

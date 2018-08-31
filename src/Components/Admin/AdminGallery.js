@@ -12,9 +12,10 @@ import api from '../../api';
 
 
 const options = [
-  { value: 'procedure', label: 'Emeliyyat' },
+  { value: 'procedure', label: 'Konfranslar' },
   { value: 'collective', label: 'Kollektiv' },
-  { value: 'drugs', label: 'Dermanlar' }
+  { value: 'drugs', label: 'Teqdimatlar' },
+  { value: 'family', label: 'Ailevi' },
 ];
 
 class AdminGallery extends PureComponent {
