@@ -128,7 +128,10 @@ class Contact extends Component {
                   <div className="my-4"></div>
                   <div className="d-flex align-items-center">
                     <span className="contact-icon font-32 text-color-blue mx-2"><Fa icon="phone" /></span>
-                    <span className="font-16">+994 50 8805880</span>
+                    <div className="d-flex flex-column justify-content-center">
+                      <span className="font-16">+994 50 8805880</span>
+                      <span className="font-16">+994 50 3184345</span>
+                    </div>
                   </div>
                 </div>
             </div>

@@ -72,6 +72,10 @@ const bookImg = {
   book2: 'https://res.cloudinary.com/fermanhesenov-az/image/upload/v1534504855/book1.png'
 };
 
+const arrGallery = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+            25, 26,227, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45
+];
+
 class GalleryKoshk extends Component {
   constructor(props) {
     super(props);
@@ -89,7 +93,7 @@ class GalleryKoshk extends Component {
     const quotes = await api.admin.getQuotes();
     const articles = await api.admin.getArticles();
     const gallery = await api.admin.getPhotos();
-    this.setState({ gallery: gallery.reverse().slice(Math.max(gallery.length - 13)), articles, quotes })
+    this.setState({ gallery: gallery.reverse(), articles, quotes })
   }
 
   openLightbox = (num) => {
@@ -128,7 +132,6 @@ class GalleryKoshk extends Component {
             navClass={['owl-g-prev', 'owl-g-next']}
             navText={[]}
             dots={false}
-            loop
           >
             <div className="m-1 d-flex flex-column align-items-center">
               <img src={gallery[0].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
@@ -172,6 +175,116 @@ class GalleryKoshk extends Component {
               />
               <img src={gallery[11].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
                    onClick={() => this.openLightbox(11)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[12].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(12)}
+              />
+              <img src={gallery[13].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(13)}
+              />
+              <img src={gallery[14].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(14)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[15].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(15)}
+              />
+              <img src={gallery[16].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(16)}
+              />
+              <img src={gallery[17].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(17)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[18].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(18)}
+              />
+              <img src={gallery[19].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(19)}
+              />
+              <img src={gallery[20].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(20)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[21].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(21)}
+              />
+              <img src={gallery[22].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(22)}
+              />
+              <img src={gallery[23].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(23)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[24].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(24)}
+              />
+              <img src={gallery[25].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(25)}
+              />
+              <img src={gallery[26].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(26)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[27].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(27)}
+              />
+              <img src={gallery[28].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(28)}
+              />
+              <img src={gallery[29].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(29)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[30].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(30)}
+              />
+              <img src={gallery[31].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(31)}
+              />
+              <img src={gallery[32].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(32)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[33].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(33)}
+              />
+              <img src={gallery[34].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(34)}
+              />
+              <img src={gallery[35].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(35)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[36].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(36)}
+              />
+              <img src={gallery[37].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(37)}
+              />
+              <img src={gallery[38].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(38)}
+              />
+            </div>
+            <div className="m-1 d-flex flex-column align-items-center">
+              <img src={gallery[39].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(39)}
+              />
+              <img src={gallery[40].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(40)}
+              />
+              <img src={gallery[41].src} alt="gallery-1" className="mt-2 gl-image img-fluid"
+                   onClick={() => this.openLightbox(41)}
               />
             </div>
           </OwlCarousel>

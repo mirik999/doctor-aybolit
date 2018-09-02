@@ -34,7 +34,7 @@ class Header extends Component {
           <BurgerMenu txt={this.txt} />
 					<div className="col-9 col-md-7 text-left font-16 py-2 px-0 px-sm-2 pl-2 pl-md-0" style={styles.headerInfo}>
             <span className="ml-2 ml-md-0 mr-1 mr-sm-2"><Fa icon="phone" /></span>
-            <a href="tel:994508805880" className="text-color">+994 50 8805880</a>
+            <a href="tel:994508805880" className="text-color">+994 50 3184345</a>
             <span className="ml-2 ml-md-5 mr-1 mr-sm-2"><Fa icon="envelope-o" /></span>
             <a href="mailto:dr_farman59@mail.ru" className="text-color">dr_farman59@mail.ru</a>
 					</div>
