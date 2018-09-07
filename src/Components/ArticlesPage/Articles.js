@@ -66,10 +66,10 @@ class Articles extends PureComponent {
     return (
       <div className="row justify-content-center border-top">
         <div className="col-12 col-md-10 mt-4">
-          <div className="row d-flex justify-content-center h-100">
+          <div className="row justify-content-center">
             { 
               currentArticles.map((art, idx) =>
-                <div className="articles-card-wrap d-flex flex-column align-items-center justify-content-between mx-4 my-3 h-100" key={idx}>
+                <div className="articles-card-wrap d-flex flex-column align-items-center justify-content-between mx-4 my-3" key={idx}>
                   <img src={art.artThumbnail} alt="article2" className="img-fluid art-card-img" />
                   <div className="art-info-wrap p-2 p-md-3 d-flex flex-column justify-content-between align-items-start h-100">
                     <div className="my-2 my-md-3 text-left w-100 art-header text-center">
