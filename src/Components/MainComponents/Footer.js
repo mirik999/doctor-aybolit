@@ -35,6 +35,7 @@ class Footer extends PureComponent {
       artLink: <FormattedMessage id="main.art-link" />,
       contactLink: <FormattedMessage id="main.contact-link" />,
       aboutFH: <FormattedMessage id="footerFH" />,
+      doctorName: <FormattedMessage id="main.doctor.name" />,
     }
   }
 
@@ -139,7 +140,7 @@ class Footer extends PureComponent {
         </div>
         <div className="row justify-content-center" style={styles.bg2}>
           <div className="col-12 col-md-10 text-left p-2 px-md-3 d-flex align-items-center" style={styles.footerColor}>
-            <small className="ml-2 ml-md-0">2018 © Dr.Fərman Hüseynov. { this.txt.allrights }</small>
+            <small className="ml-2 ml-md-0">2018 © { this.txt.doctorName } { this.txt.allrights }</small>
           </div>
         </div>
       </Wrapper>

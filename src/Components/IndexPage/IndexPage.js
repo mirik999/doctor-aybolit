@@ -27,6 +27,7 @@ class IndexPage extends PureComponent {
       koshk: <FormattedMessage id="main.kosh" />,
       readmore: <FormattedMessage id="main.readmore" />,
       mainFH: <FormattedMessage id="mainFH" />,
+      doctorName: <FormattedMessage id="main.doctor.name" />,
     }
   }
 

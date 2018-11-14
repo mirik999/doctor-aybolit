@@ -8,7 +8,7 @@ class DoctorInfo extends PureComponent {
     return (
       <div className="row justify-content-center px-3 px-md-0 pt-2 pt-md-3 pt-xl-5">
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center">
-          <span className="doctors-name-2 font-39 my-1 my-md-2">PhD Dr. Fərman Həsənov</span>
+          <span className="doctors-name-2 font-39 my-1 my-md-2">{ txt.doctorName }</span>
           <span className="doctors-prof-2 font-28 my-1 my-md-3">{ txt.doctorProf }</span>
           <div className="doctors-mini-article my-1 my-md-3">
             <p className="font-16 text-justify">

@@ -18,7 +18,7 @@ class DoctorIndexImage extends PureComponent {
             { (src, loading, placeholder) => <img src={src} alt="Doctor" className="img-fluid doctors-cover-img" /> }
           </ProgressiveImage>
           <div className="doctors-info d-flex flex-column">
-            <span className="doctors-name font-64 mb-1 mb-md-0">Dr.Fərman Həsənov</span>
+            <span className="doctors-name font-64 mb-1 mb-md-0">{ txt.doctorName }</span>
             <div className="doctors-pros-wrap mt-1 mt-sm-3 mt-md-4 d-flex flex-column font-28-fix p-lg-2 font-weight-light">
               <span className="doctors-prof">{ txt.doctorProf1 }</span>
               <span className="doctors-prof">{ txt.doctorProf2 }</span>

@@ -20,6 +20,7 @@ class BiographyPage extends PureComponent {
       doctorProf: <FormattedMessage id="main.doctor-prof" />,
       bioFHt: <FormattedMessage id="bioFH-t" />,
       bioFHb: <FormattedMessage id="bioFH-b" />,
+      doctorName: <FormattedMessage id="main.doctor.name" />,
     }
   }
 
